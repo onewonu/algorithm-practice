@@ -9,7 +9,8 @@ public class Solution {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+        System.out.printf("a = %d\nb = %d", a, b);
+
+        sc.close();
     }
 }
