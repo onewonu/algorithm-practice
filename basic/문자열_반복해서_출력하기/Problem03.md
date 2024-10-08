@@ -10,6 +10,7 @@
 #### 출력 #1
 > stringstringstringstringstring
 # 회고
+### 01
 > IntStream.range(0, n).forEach(i -> System.out.print(str));
 
 .range(0, n)
@@ -17,6 +18,10 @@
 
 .forEach
 - 해당 스트림의 각 요소를 실행.
+### 02
+> System.out.print(str.repeat(n));
+- 주어진 문자열을 n번 반복한 결과를 하나의 새로운 문자열로 반환.
 ### Reference
 [java 21 docs: IntStream.range](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#range(int,int))  
-[java 21 docs: IntStream.forEach](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#forEach(java.util.function.IntConsumer))
+[java 21 docs: IntStream.forEach](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#forEach(java.util.function.IntConsumer))  
+[java 21 docs: repeat(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#repeat(int))
