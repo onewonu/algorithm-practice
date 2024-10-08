@@ -1,6 +1,7 @@
 package basic.문자열_반복해서_출력하기;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Solution03 {
     public static void main(String[] args) {
@@ -8,8 +9,6 @@ public class Solution03 {
         String str = sc.next();
         int n = sc.nextInt();
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(str);
-        }
+        IntStream.range(0, n).forEach(i -> System.out.print(str));
     }
 }

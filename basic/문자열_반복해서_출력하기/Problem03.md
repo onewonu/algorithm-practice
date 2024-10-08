@@ -9,3 +9,14 @@
 > string 5
 #### 출력 #1
 > stringstringstringstringstring
+# 회고
+> IntStream.range(0, n).forEach(i -> System.out.print(str));
+
+.range(0, n)
+- 0부터 n-1까지의 정수를 생성하는 스트림을 만든다.
+
+.forEach
+- 해당 스트림의 각 요소를 실행.
+### Reference
+[java 21 docs: IntStream.range](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#range(int,int))  
+[java 21 docs: IntStream.forEach](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#forEach(java.util.function.IntConsumer))
