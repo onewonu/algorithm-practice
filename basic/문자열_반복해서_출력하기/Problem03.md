@@ -13,11 +13,11 @@
 ### 01
 > IntStream.range(0, n).forEach(i -> System.out.print(str));
 
-.range(0, n)
-- 0부터 n-1까지의 정수를 생성하는 스트림을 만든다.
+- .range(0, n)
+  - 0부터 n-1까지의 정수를 생성하는 스트림을 만든다.
 
-.forEach
-- 해당 스트림의 각 요소를 실행.
+- .forEach
+  - 해당 스트림의 각 요소를 실행.
 ### 02
 > System.out.print(str.repeat(n));
 - 주어진 문자열을 n번 반복한 결과를 하나의 새로운 문자열로 반환.
