@@ -9,3 +9,11 @@
 > 4 5
 #### 출력 #1
 > 4 + 5 = 9
+# 회고
+### String formatting (printf())
+printf 는 print formatted 의 축약형.
+- %d: 정수 삽입 (decimal)
+- %s: 문자열 삽입 (string)
+- %f: 실수 삽입 (float)
+- %c: 한 개의 문자 삽입 (char)
+- %%: % 기호 자체 삽입
