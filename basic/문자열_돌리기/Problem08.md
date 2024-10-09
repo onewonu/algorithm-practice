@@ -17,3 +17,11 @@
 > c  
 > d  
 > e
+# 회고
+- String.charAt(int)
+    - 문자열의 특정 인덱스 위치에 있는 문자를 반환.
+### 다른 방법
+> a.chars().mapToObj(c -> (char)c).forEach(System.out::println);
+### Reference
+[java 21 docs: String.charAt(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#charAt(int))  
+[java 21 docs: mapToObj(IntFunction)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#mapToObj(java.util.function.IntFunction))
