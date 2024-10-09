@@ -7,10 +7,7 @@ public class Solution09 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        if (n % 2 == 0) {
-            System.out.printf("%d is even", n);
-        } else {
-            System.out.printf("%d is odd", n);
-        }
+        String result = (n % 2 == 0) ? "even" : "odd";
+        System.out.printf("%d is %s", n, result);
     }
 }
