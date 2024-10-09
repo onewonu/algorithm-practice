@@ -7,7 +7,8 @@ public class Solution06 {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
+        int sum = a + b;
 
-        System.out.println(a + b);
+        System.out.printf("%d + %d = %d", a, b, sum);
     }
 }
