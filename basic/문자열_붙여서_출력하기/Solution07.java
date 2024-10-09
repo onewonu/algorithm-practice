@@ -7,5 +7,7 @@ public class Solution07 {
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
         String b = sc.next();
+
+        System.out.print(a + b);
     }
 }
