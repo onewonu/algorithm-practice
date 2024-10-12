@@ -17,3 +17,6 @@
 - 예제 1번의 my_string은 "string"이고 이를 3번 반복한 문자열은 "stringstringstring"이므로 이를 return 합니다.
 #### 입출력 예 #2
 - 예제 2번의 my_string 은 "love"이고 이를 10번 반복한 문자열은 "lovelovelovelovelovelovelovelovelovelove"이므로 이를 return 합니다.
+# 회고
+### Reference
+[java 21 docs: String.repeat](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#repeat(int))
