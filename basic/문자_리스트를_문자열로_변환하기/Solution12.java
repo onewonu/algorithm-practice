@@ -8,7 +8,6 @@ public class Solution12 {
     }
 
     public static String solution(String[] arr) {
-        String answer = "";
-        return answer;
+        return String.join("", arr);
     }
 }

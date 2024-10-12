@@ -9,3 +9,10 @@
 | arr           | result |
 |---------------|--------|
 | ["a","b","c"] | "abc"  |
+
+# 회고
+문자들이 담긴 리스트(배열)를 순서대로 이어 붙여 하나의 문자열로 변환.
+- join
+  - 문자열 배열이나 컬렉션의 요소들을 구분자와 함께 하나의 문자열로 결합.
+### Reference
+[java 21 docs: String.join](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#join(java.lang.CharSequence,java.lang.Iterable))
