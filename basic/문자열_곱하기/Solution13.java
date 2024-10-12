@@ -9,7 +9,12 @@ public class Solution13 {
     }
 
     public String solution(String my_string, int k) {
-        String answer = "";
-        return answer;
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < k; i++) {
+            result.append(my_string);
+        }
+
+        return result.toString();
     }
 }
