@@ -4,7 +4,7 @@
 
 12 ⊕ 3 = 123  
 3 ⊕ 12 = 312  
-양의 정수 a와 b가 주어졌을 때, a ⊕ b와 2 * a * b 중 더 큰 값을 return하는 solution 함수를 완성해 주세요.  
+양의 정수 a와 b가 주어졌을 때, a ⊕ b와 2 * a * b 중 더 큰 값을 return 하는 solution 함수를 완성해 주세요.  
 
 단, a ⊕ b와 2 * a * b가 같으면 a ⊕ b를 return 합니다.
 ### 제한사항
@@ -21,3 +21,7 @@
 - a ⊕ b = 291 이고, 2 * a * b = 364 입니다. 둘 중 더 큰 값은 364 이므로 364를 return 합니다.
 #### 입출력 예 #2
 - a ⊕ b = 912 이고, 2 * a * b = 364 입니다. 둘 중 더 큰 값은 912 이므로 912를 return 합니다.
+# 회고
+### Reference
+[java 21 docs: Integer.parseInt(String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String))  
+[java 21 docs: Math.max(int, int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#max(int,int))
