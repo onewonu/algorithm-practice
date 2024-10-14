@@ -15,15 +15,18 @@ public class Solution19 {
     public int solution(String ineq, String eq, int n, int m) {
         int answer = 0;
 
-        // TODO: 간결한 조건으로 치환 가능성 있어보임.
-        if (ineq.equals(">") && eq.equals("=")) {
-            answer = (n >= m) ? 1 : 0;
-        } else if (ineq.equals("<") && eq.equals("=")) {
-            answer = (n <= m) ? 1 : 0;
-        } else if (ineq.equals(">") && eq.equals("!")) {
-            answer = (n > m) ? 1 : 0;
-        } else if (ineq.equals("<") && eq.equals("!")) {
-            answer = (n < m) ? 1 : 0;
+        if (ineq.equals(">")) {
+            if (eq.equals("=")) {
+                answer = (n >= m) ? 1 : 0;
+            } else {
+                answer = (n > m) ? 1 : 0;
+            }
+        } else {
+            if (eq.equals("=")) {
+                answer = (n <= m) ? 1 : 0;
+            } else {
+                answer = (n < m) ? 1 : 0;
+            }
         }
 
         return answer;
