@@ -68,6 +68,11 @@ n = 7
 5. sumOddNumbers(7, 1) → 1 + 15 = 16 -> return 16
 
 결과: 16
+#### 추가 내용
+- 짝수 제곱의 합  
+>$
+    S = 4 \times \frac{n}{2} \times \left(\frac{n}{2} + 1\right) \times \left(2 \times \frac{n}{2} + 1\right) / 6
+$
 ### Reference
 [java 21 docs: IntStream.rangeClosed(int, int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#rangeClosed(int,int))      
 [java 21 docs: IntStream.filter(IntPredicate](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#filter(java.util.function.IntPredicate))  
