@@ -14,7 +14,13 @@ public class Solution20 {
 
     public int solution(int a, int b, boolean flag) {
         int answer = 0;
-        answer = a + (flag ? 1 : -1) * b;
+
+        if (flag) {
+            answer = a + b;
+        } else {
+            answer = a - b;
+        }
+
         return answer;
     }
 }
