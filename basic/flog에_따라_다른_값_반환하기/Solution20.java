@@ -9,11 +9,12 @@ public class Solution20 {
 
     private static void runTest(Solution20 solution, int a, int b, boolean flag) {
         int result = solution.solution(a, b, flag);
-        System.out.printf("solution(%d%d%s) = %d%n", a, b, flag, result);
+        System.out.printf("solution(%d, %d, %s) = %d%n", a, b, flag, result);
     }
 
     public int solution(int a, int b, boolean flag) {
         int answer = 0;
+        answer = a + (flag ? 1 : -1) * b;
         return answer;
     }
 }
