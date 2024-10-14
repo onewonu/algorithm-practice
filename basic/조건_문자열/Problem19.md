@@ -24,3 +24,6 @@
 - 20 <= 50은 참이기 때문에 1을 return 합니다.
 #### 입출력 예 #2
 - 41 > 78은 거짓이기 때문에 0을 return 합니다.
+# 회고
+### Reference
+[java 21 docs: String.equals(Object)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#equals(java.lang.Object))
