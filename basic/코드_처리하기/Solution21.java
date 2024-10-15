@@ -12,33 +12,23 @@ public class Solution21 {
     }
 
     public String solution(String code) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
 
         int mode = 0;
 
-        // TODO: 조건의 간소화 필요.
         for (int i = 0; i < code.length(); i++) {
-            if (mode == 0) {
-                if (code.charAt(i) != '1') {
-                    if (i % 2 == 0) {
-                        answer += code.charAt(i);
-                    }
-                } else {
-                    mode = 1;
-                }
+            char currentChar = code.charAt(i);
+
+            if (currentChar == '1') {
+                mode = 1 - mode;
             } else {
-                if (code.charAt(i) != '1') {
-                    if (i % 2 != 0) {
-                        answer += code.charAt(i);
-                    }
-                } else {
-                    mode = 0;
+                if ((mode == 0 && i % 2 == 0) || (mode == 1 && i % 2 != 0)) {
+                    answer.append(currentChar);
                 }
             }
         }
 
-        if (answer.isEmpty()) { answer = "EMPTY"; }
-
-        return answer;
+        if (answer.length() == 0) { return "EMPTY"; }
+        return answer.toString();
     }
 }

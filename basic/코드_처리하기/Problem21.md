@@ -46,3 +46,8 @@ mode는 0과 1이 있으며, `idx`를 0부터 `code`의 길이 - 1까지 1씩 �
 | 10 | "c"     | 0    | "acbac" |
 
 따라서 "acbac"을 return 합니다.
+# 회고
+1. mode 가 0 또는 1이기 떄문에, 전환할 수 있는 방법으로 1 - mode 라는 수식을 사용.
+2. mode 가 0일 때는 항상 짝수인 인덱스만, mode 가 1일 때는 홀수인 인덱스만 처리하여 하나의 조건으로 묶음. 
+### Reference
+[java 21 docs: StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html)
