@@ -47,7 +47,13 @@ mode는 0과 1이 있으며, `idx`를 0부터 `code`의 길이 - 1까지 1씩 �
 
 따라서 "acbac"을 return 합니다.
 # 회고
+**mode 의 상태와 인덱스의 짝/홀수성을 간결하게 연결하여 조건을 처리하는 것이 관건.**
+- mode 가 0일 때는 짝수 인덱스에서만 문자를 추가해야 함.
+- mode 가 1일 때는 홀수 인덱스에서만 문자를 추가해야 함.
+- “1”을 만나면 mode 를 0에서 1로, 또는 1에서 0으로 바꾸어야 함.
 1. mode 가 0 또는 1이기 떄문에, 전환할 수 있는 방법으로 1 - mode 라는 수식을 사용.
 2. mode 가 0일 때는 항상 짝수인 인덱스만, mode 가 1일 때는 홀수인 인덱스만 처리하여 하나의 조건으로 묶음. 
+3. 조건 ((mode == 0 && i % 2 == 0) || (mode == 1 && i % 2 != 0))은 (i % 2 == 0)와 (i % 2 == 1)으로 나뉘어 있지만, 이 조건을 간단하게 i % 2와 mode 의 비교로 통합할 수 있다.  
+즉, i % 2는 짝수일 때 0, 홀수일 때 1이므로, mode 와 비교하는 것이 동일한 논리로 동작한다.
 ### Reference
 [java 21 docs: StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html)
