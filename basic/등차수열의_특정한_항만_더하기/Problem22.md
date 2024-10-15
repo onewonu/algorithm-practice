@@ -37,3 +37,11 @@
 | `included` | false | false | false | true | false | false | false |
 
 - 따라서 4항만 true이므로 10을 return 합니다.
+# 회고
+### 등차수열에서 n번째 항을 구하는 공식 
+>$
+n= a + (n - 1)d
+$
+- 인덱스가 0부터 시작해서 차례로 상승하기 때문에, (i - 1)은 적용하지 않는다.
+### 다른 방법: Stream API
+> IntStream.range(0, included.length).filter(i -> included[i]).map(i -> a + (i * d)).sum();
