@@ -20,3 +20,5 @@
 
 #### 입출력 예 #2
 - 모든 원소의 곱은 840, 합의 제곱은 529이므로 0을 return 합니다.
+### Reference
+[java 21 docs: Math.pow(double,double)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#pow(double,double))
