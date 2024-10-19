@@ -16,6 +16,20 @@ public class Solution25 {
 
     public int solution(int[] num_list) {
         int answer = 0;
+
+        StringBuilder oddNumber = new StringBuilder();
+        StringBuilder evenNumber = new StringBuilder();
+
+        for (int i : num_list) {
+            if (i % 2 == 0) {
+                evenNumber.append(i);
+            } else {
+                oddNumber.append(i);
+            }
+        }
+
+        answer = Integer.parseInt(evenNumber.toString()) + Integer.parseInt(oddNumber.toString());
+
         return answer;
     }
 }

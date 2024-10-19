@@ -23,3 +23,6 @@
 #### 입출력 예 #2
 - 홀수만 이어 붙인 수는 573이고, 짝수만 이어 붙인 수는 8입니다.
 - 두 수의 합은 581이므로 581을 return 합니다.
+# 회고
+### Reference
+[java 21 docs: StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html)
