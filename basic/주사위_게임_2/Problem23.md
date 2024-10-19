@@ -31,5 +31,46 @@
 - 예제 3번에서 세 주사위 숫자가 모두 같으므로 `(4 + 4 + 4) × (4^2 + 4^2 + 4^2) × (4^3 + 4^3 + 4^3) = 12 × 48 × 192 = 110,592`점을 얻습니다. 
 따라서 110,592를 return 합니다.
 # 회고
+### 다른사람의 풀이
+```java
+public int solution(int a, int b, int c) {
+    int answer = 1;
+
+    int count = 1;
+    if(a == b || a == c || b == c) {
+        count++;
+    }
+
+    if(a == b && b == c) {
+        count++;
+    }
+
+    for(int i = 1; i <= count; i++) {
+        answer *= (pow(a,i)+pow(b,i)+pow(c,i));
+    }
+
+    return answer;
+}
+
+private int pow(int a, int b) {
+    if(b == 0) return 1;
+    return a * pow(a, b-1);
+}
+```
+#### 코드 설명
+- count 변수를 사용하여 세 숫자의 일치 여부에 따라 제곱을 몇 번 할지를 제어하고, 그에 맞춰 반복문을 통해 계산을 수행하는 방식. 
+- 이 방식은 조건에 따라 제곱 횟수를 조정하고, 반복문에서 각 숫자의 제곱값을 계산하여 최종 결과를 반환.
+1. 세 숫자가 모두 다르다면(count = 1)
+2. 세 숫자 중 어느 두 숫자는 같고 나머지 다른 숫자는 다르다면(count = 2)
+3. 세 숫자가 모두 같다면(count = 3)
+##### 재귀 호출
+- a=5, b=3, c=3
+- 기저 조건: b == 0
+- 호출 과정
+  - pow(a, b)는 a를 b번 곱해야 하는 문제를 **a * pow(a, b - 1)** 로 나누어서 해결. 
+  - 이 과정은 b가 0이 될 때까지 **b - 1** 씩 줄이면서 반복.
+1. 첫 번째 반복 (i = 1): pow(5, 1) + pow(3, 1) + pow(3, 1) = 5 + 3 + 3 = 11
+2. 두 번째 반복 (i = 2): pow(5, 2) + pow(3, 2) + pow(3, 2) = 5^2 + 3^2 + 3^2 = 25 + 9 + 9 = 43
+3. 최종 계산: 11 * 43 = 473
 ### Reference
 [java 21 docs: Math.pow(double,double)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#pow(double,double))
