@@ -30,3 +30,6 @@
 #### 입출력 예 #3
 - 예제 3번에서 세 주사위 숫자가 모두 같으므로 `(4 + 4 + 4) × (4^2 + 4^2 + 4^2) × (4^3 + 4^3 + 4^3) = 12 × 48 × 192 = 110,592`점을 얻습니다. 
 따라서 110,592를 return 합니다.
+# 회고
+### Reference
+[java 21 docs: Math.pow(double,double)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Math.html#pow(double,double))
