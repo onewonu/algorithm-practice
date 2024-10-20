@@ -15,7 +15,18 @@ public class Solution26 {
     }
 
     public int[] solution(int[] num_list) {
-        int[] answer = {};
+        int[] answer = new int[num_list.length + 1];
+        System.arraycopy(num_list, 0, answer, 0, num_list.length);
+
+        int last = num_list[num_list.length - 1];
+        int secondLast = num_list[num_list.length - 2];
+
+        if (last > secondLast) {
+            answer[answer.length - 1] = last - secondLast;
+        } else {
+            answer[answer.length - 1] = last * 2;
+        }
+
         return answer;
     }
 }
