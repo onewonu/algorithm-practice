@@ -12,7 +12,16 @@ public class Solution27 {
     }
 
     public int solution(int n, String control) {
-        int answer = 0;
-        return answer;
+        for (char ch : control.toCharArray()) {
+            n += switch (ch) {
+                case 'w' -> 1;
+                case 's' -> -1;
+                case 'd' -> 10;
+                case 'a' -> -10;
+                default -> 0;
+            };
+        }
+
+        return n;
     }
 }
