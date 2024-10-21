@@ -10,11 +10,30 @@ public class Solution28 {
 
     private static void runTest(Solution28 solution, int[] numLog) {
         String result = solution.solution(numLog);
-        System.out.printf("solution(%s) = %s%n", Arrays.toString(numLog) ,result);
+        System.out.printf("solution(%s) = %s%n", Arrays.toString(numLog), result);
     }
 
     public String solution(int[] numLog) {
-        String answer = "";
-        return answer;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 1; i < numLog.length; i++) {
+
+            int currentValue = numLog[i];
+            int previousValue = numLog[i - 1];
+
+            int difference = currentValue - previousValue;
+
+            stringBuilder.append(
+                    switch (difference) {
+                        case 1 -> "w";
+                        case -1 -> "s";
+                        case 10 -> "d";
+                        case -10 -> "a";
+                        default -> "";
+                    }
+            );
+        }
+
+        return stringBuilder.toString();
     }
 }
