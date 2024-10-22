@@ -27,3 +27,27 @@
 - 두 번째 쿼리 `[0, 3, 2]`: 범위에는 0, 1, 2, 4가 있으며 이 중 `2`보다 크면서 가장 작은 값은 `4`입니다.
 - 세 번째 쿼리 `[0, 2, 2]`: 범위에는 0, 1, 2가 있으며 여기에는 `2`보다 큰 값이 없습니다.  
   따라서 `[3, 4, -1]`을 return 합니다.
+# 회고
+> int minVal = -1;
+- minVal
+  - 현재 쿼리에서 찾을 k보다 크면서 가장 작은 값을 저장할 변수 초기화.
+> if (minVal == -1 || minVal > arr[j]) { minVal = arr[j]; }
+- minVal == -1
+  - 아직 minVal 이 초기값 -1을 유지하고 있다는 의미로, 이는 k보다 큰 값이 아직 발견되지 않았음을 나타내고, 첫 번째로 발견한 k보다 큰 값을 minVal 에 저장.
+- minVal > arr[j]
+  - 현재 발견된 값이 이전에 저장된 minVal 보다 더 작은 값인지를 확인하는 조건으로, k보다 큰 값들 중에서 더 작은 값이 있으면 minVal 을 갱신.
+### Stream API
+```java
+import java.util.Arrays;
+
+public int[] solution(int[] arr, int[][] queries) {
+  return Arrays.stream(queries)
+          .mapToInt(query ->
+                  Arrays.stream(arr, query[0], query[1] + 1)
+                          .filter(value -> value > query[2])  
+                          .min()                              
+                          .orElse(-1)                         
+          )
+          .toArray();
+}
+```
