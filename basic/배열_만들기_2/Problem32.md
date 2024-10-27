@@ -23,3 +23,11 @@
 #### 입출력 예 #2
 - `10` 이상 `20` 이하이면서 0과 5로만 이루어진 정수는 존재하지 않습니다.
 - 따라서 `[-1]`을 return 합니다.
+# 회고
+### 01 직접 검증
+1. l부터 r 까지의 숫자를 순회하면서 각 숫자가 0과 5로만 이루어져 있는지 확인.
+2. 숫자를 10으로 나누며 자릿수를 나눠서, 각 자릿수가 0 또는 5인지 확인.
+3. 만족하는 숫자는 리스트에 추가하고, 조건을 만족하는 숫자가 하나도 없다면 -1을 반환.
+### Reference
+[java 21 docs: ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html)  
+[java 21 docs: util.List.isEmpty()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#isEmpty())
