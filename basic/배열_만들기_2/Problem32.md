@@ -28,6 +28,20 @@
 1. l부터 r 까지의 숫자를 순회하면서 각 숫자가 0과 5로만 이루어져 있는지 확인.
 2. 숫자를 10으로 나누며 자릿수를 나눠서, 각 자릿수가 0 또는 5인지 확인.
 3. 만족하는 숫자는 리스트에 추가하고, 조건을 만족하는 숫자가 하나도 없다면 -1을 반환.
+### 02 이진수 변환을 통해 특정 숫자 패턴을 생성
+정수를 1부터 지정된 숫자까지 이진수 패턴으로 변환하고, 이를 기반으로 특정 규칙에 따라 지정한 숫자 패턴을 생성한 뒤, 입력된 범위 [l, r] 내의 숫자만 결과로 반환한다.
+#### 비트에 따라 반복문 제한
+- **2 bit**: $2^2 = 4$
+- **3 bit**: $2^3 = 8$
+- **4 bit**: $2^4 = 16$
+- **5 bit**: $2^5 = 32$
+- **6 bit**: $2^6 = 64$
+- **7 bit**: $2^7 = 128$
+- **8 bit**: $2^8 = 256$  
+...
 ### Reference
-[java 21 docs: ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html)  
-[java 21 docs: util.List.isEmpty()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#isEmpty())
+[java 21 docs: ArrayList](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html)    
+[java 21 docs: util.List.isEmpty()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html#isEmpty())  
+[java 21 docs: Integer.parseInt(java.lang.CharSequence,int,int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.CharSequence,int,int,int))  
+[java 21 docs: Integer.toBinaryString(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#toBinaryString(int))    
+[java 21 docs: Stream.mapToInt(java.util.function.ToIntFunction)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html#mapToInt(java.util.function.ToIntFunction))
