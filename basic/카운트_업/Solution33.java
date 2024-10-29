@@ -19,6 +19,6 @@ public class Solution33 {
         List<Integer> arrayList = new ArrayList<>();
         for (int i = start_num; i <= end_num; i++) arrayList.add(i);
 
-        return arrayList.stream().mapToInt(i -> i).toArray();
+        return arrayList.stream().mapToInt(Integer::intValue).toArray();
     }
 }
