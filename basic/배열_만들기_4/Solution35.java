@@ -1,6 +1,7 @@
 package basic.배열_만들기_4;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Solution35 {
     public static void main(String[] args) {
@@ -14,7 +15,19 @@ public class Solution35 {
     }
 
     public int[] solution(int[] arr) {
-        int[] stk = {};
-        return stk;
+        Stack<Integer> stk = new Stack<>();
+
+        int i = 0;
+
+        while (i < arr.length) {
+            if (stk.isEmpty() || stk.peek() < arr[i]) {
+                stk.push(arr[i]);
+                i++;
+            } else {
+                stk.pop();
+            }
+        }
+
+        return stk.stream().mapToInt(Integer::valueOf).toArray();
     }
 }

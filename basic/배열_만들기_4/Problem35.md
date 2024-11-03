@@ -36,3 +36,12 @@
 | -  | -      | [1, 2, 3]   |
 
 - 따라서 `[1, 2, 3]`을 return 합니다.
+# 회고
+### Stack
+**LIFO(Last In, First Out) 구조를 따르는 자료구조**, 데이터를 선형적으로 관리하며, 삽입과 삭제가 한쪽 끝(맨 위)에서만 이루어진다.
+#### 주요 연산
+- Push: 스택의 맨 위에 데이터를 추가
+- Pop: 스택의 맨 위에 있는 데이터를 제거하고 반환
+- Peek: 스택의 맨 위에 있는 데이터를 제거하지 않고 반환
+### Reference
+[java 21 docs: util.Stack](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Stack.html)
