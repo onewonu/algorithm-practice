@@ -28,23 +28,49 @@ public class Solution37 {
             System.out.println(countDice);
         }
 
-        // countDice.size() == 1
+        if (countDice.size() == 1) { // 모든 숫자가 같은 경우
+            return 1111 * a;
 
-        // TODO: countDice.size() == 2 일 경우, (세 주사위에서 나온 숫자가 p로 같고) 와 (두 개씩 같은 값의 사이즈가 같다) 의 결과가 같음
-        /*
-            {4=1}
-            {1=1, 4=1}
-            {1=1, 4=2}
-            {1=1, 4=3}
-            solution(4, 1, 4, 4) = 0
-            {6=1}
-            {3=1, 6=1}
-            {3=2, 6=1}
-            {3=2, 6=2}
-            solution(6, 3, 3, 6) = 0
-        */
+        } else if (countDice.size() == 2) {
 
-        // countDice.size() == 3
+            int p = 0;
+            int q = 0;
+
+            for (Integer key : countDice.keySet()) {
+                if (countDice.get(key) == 3) {
+                    p = key;
+                } else if (countDice.get(key) == 1) {
+                    q = key;
+                } else {
+                    p = key;
+                    q = key;
+                }
+            }
+
+            if (countDice.get(p) == 3) {
+                return (int) Math.pow((10 * p + q), 2);
+            } else if (countDice.get(q) == 2) {
+                return (p + q) * Math.abs(p - q);
+            }
+        } else if (countDice.size() == 3) {
+
+            int q = 0;
+            int r = 0;
+
+            for (Integer key : countDice.keySet()) {
+                if (countDice.get(key) == 1) {
+                    if (q == 0) {
+                        q = key;
+                    } else {
+                        r = key;
+                    }
+                }
+            }
+
+            return q * r;
+        } else {
+            return Math.min(Math.min(a, b), Math.min(c, d));
+        }
 
         return 0;
     }
