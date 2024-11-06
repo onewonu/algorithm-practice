@@ -31,35 +31,35 @@ public class Solution37 {
         if (countDice.size() == 1) { // 모든 숫자가 같은 경우
             return 1111 * a;
 
-        } else if (countDice.size() == 2) {
+        } else if (countDice.size() == 2) { // 1) 3가지 숫자만 같은 경우, 2) 2가지 숫자가 서로 같은 경우
 
             int p = 0;
             int q = 0;
 
             for (Integer key : countDice.keySet()) {
-                if (countDice.get(key) == 3) {
+                if (countDice.get(key) == 3) { // 3가지 숫자가 같은 경우
                     p = key;
-                } else if (countDice.get(key) == 1) {
+                } else if (countDice.get(key) == 1) { // 3가지 숫자가 같은 경우의 나머지 1개
                     q = key;
-                } else {
+                } else { // 2가지 숫자가 서로 같은 경우
                     p = key;
                     q = key;
                 }
             }
 
-            if (countDice.get(p) == 3) {
+            if (countDice.get(p) == 3) { // 3번 중복
                 return (int) Math.pow((10 * p + q), 2);
-            } else if (countDice.get(q) == 2) {
+            } else if (countDice.get(q) == 2) { // 2번 중복
                 return (p + q) * Math.abs(p - q);
             }
-        } else if (countDice.size() == 3) {
+        } else if (countDice.size() == 3) { // 2가지 숫자만 같은 경우
 
             int q = 0;
             int r = 0;
 
             for (Integer key : countDice.keySet()) {
-                if (countDice.get(key) == 1) {
-                    if (q == 0) {
+                if (countDice.get(key) == 1) { // 2가지 숫자만 같은 경우의 서로 다른 두가지의 숫자
+                    if (q == 0) { // 첫번째 값을 할당하기 위한 조건
                         q = key;
                     } else {
                         r = key;
@@ -68,7 +68,7 @@ public class Solution37 {
             }
 
             return q * r;
-        } else {
+        } else { // 모든 숫자 중 일치하는 요소가 없음
             return Math.min(Math.min(a, b), Math.min(c, d));
         }
 
