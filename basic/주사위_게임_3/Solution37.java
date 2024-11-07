@@ -35,8 +35,16 @@ public class Solution37 {
                 else q = key;
             }
 
-            if (countDice.containsValue(3)) return (int) Math.pow((10 * p + q), 2);
-            else return (p + q) * Math.abs(p - q);
+            if (countDice.containsValue(3)) {
+                return (10 * p + q) * (10 * p + q);
+            } else {
+                for (Integer key : countDice.keySet()) {
+                    if (p == 0) p = key;
+                    else q = key;
+                }
+
+                return (p + q) * Math.abs(p - q);
+            }
 
         } else if (countDice.size() == 3) {
             int q = 0, r = 0;
