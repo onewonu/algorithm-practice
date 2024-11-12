@@ -25,3 +25,8 @@
 #### 입출력 예 #2
 - 예제 2번의 `my_string`에서 인덱스 `0`, `1`, `2`, `3`에 해당하는 글자는 각각 `z`, `p`, `i`, `a`입니다.
 - `my_string`에서 `index_list`에 들어있는 원소에 해당하는 인덱스의 글자들을 순서대로 모으면 `p`, `i`, `z`, `z`, `a`가 되어 "pizza"를 반환합니다.
+# 회고
+처음 생각한 방식은 my_string 의 각 문자를 배열에 담은 후, index_list 의 값에 해당하는 인덱스를 참조하여 StringBuilder 로 이어 붙이는 방식이다.  
+개선한 방식은 my_string 을 별도의 문자 배열로 만들 필요 없이 바로 인덱스를 참조하도록 수정하였다.
+### Reference
+[java 21 docs: StringBuilder](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html)  

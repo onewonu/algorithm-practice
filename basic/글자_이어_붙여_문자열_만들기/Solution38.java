@@ -1,7 +1,6 @@
 package basic.글자_이어_붙여_문자열_만들기;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class Solution38 {
     public static void main(String[] args) {
@@ -16,7 +15,9 @@ public class Solution38 {
     }
 
     public String solution(String my_string, int[] index_list) {
-        String answer = "";
-        return answer;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int index : index_list) stringBuilder.append(my_string.charAt(index));
+
+        return stringBuilder.toString();
     }
 }
