@@ -22,3 +22,12 @@
 
 #### 입출력 예 #2
 - 예제 2번의 `number`는 78720646226947352489로, 각 자리 숫자의 합은 101입니다. 101을 9로 나눈 나머지는 2이고, 실제로 78720646226947352489 = 9 × 8746738469660816943 + 2이므로 2를 return 합니다.
+# 회고
+### Stream
+```java
+public int solution(String number) {
+    return number.chars().map(c -> c - '0').sum() % 9;
+}
+```
+### Reference
+[java 21 docs: String.toCharArray()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#toCharArray())  

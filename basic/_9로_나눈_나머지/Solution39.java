@@ -14,6 +14,10 @@ public class Solution39 {
 
     public int solution(String number) {
         int answer = 0;
+
+        for (char c : number.toCharArray()) answer += c - '0';
+        answer = answer % 9;
+
         return answer;
     }
 }
