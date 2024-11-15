@@ -30,3 +30,28 @@
 | [6, 10] | "programmers" |
 
 - 따라서 최종 결과는 `"programmers"`입니다.
+# 회고
+### 문자열 구간 뒤집기
+> 예제 1: "remrgorpsam" -> [0, 7] | "progrmersam"
+
+예제를 통해 유추할 수 있듯이, `[0, 7]`, `[1, 6]`, `[1, 5]`... 의 형태로 문자열을 뒤집고 있다. 이는 **구간 반전** 이라는 작업이 각 쿼리의 범위에 따라 순차적으로 이루어지고 있음을 보여준다.
+### StringBuilder
+```java
+public String solution(String my_string, int[][] queries) {
+    StringBuilder sb = new StringBuilder(my_string);
+
+    for (int[] query : queries) {
+        int start = query[0];
+        int end = query[1] + 1;
+        
+        String reversedPart = new StringBuilder(sb.substring(start, end)).reverse().toString();
+        sb.replace(start, end, reversedPart);
+    }
+
+    return sb.toString();
+}
+```
+[java 21 docs: String.toCharArray()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#toCharArray())  
+[java 21 docs: StringBuilder.substring(int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html#substring(int,int))  
+[java 21 docs: StringBuilder.reverse()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html#reverse())  
+[java 21 docs: StringBuilder.replace(int,int,java.lang.String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html#replace(int,int,java.lang.String))
