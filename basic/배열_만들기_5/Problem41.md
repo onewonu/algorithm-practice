@@ -29,4 +29,7 @@
 | 1   | `"43210"` | `43210` | `false`    | `[56789]`        |
 | 2   | `"99999"` | `99999` | `true`     | `[56789, 99999]` |
 
-- 최종 결과는 `[56789, 99999]`입니다.
+- 최종 결과는 `[56789, 99999]`
+# 회고
+### Reference
+[java 21 docs: String.substring(int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int,int))

@@ -1,7 +1,7 @@
 package basic.배열_만들기_5;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Stack;
 
 public class Solution41 {
     public static void main(String[] args) {
@@ -15,7 +15,15 @@ public class Solution41 {
     }
 
     public int[] solution(String[] intStrs, int k, int s, int l) {
-        int[] answer = {};
-        return answer;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (String intStr : intStrs) {
+            String substring = intStr.substring(s, s + l);
+            int parseInt = Integer.parseInt(substring);
+
+            if (parseInt > k) list.add(parseInt);
+        }
+
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 }
