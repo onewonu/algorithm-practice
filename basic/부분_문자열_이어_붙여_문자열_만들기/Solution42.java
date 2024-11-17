@@ -18,7 +18,10 @@ public class Solution42 {
 
         for (int i = 0; i < my_strings.length; i++) {
             String currentString = my_strings[i];
-            String substring = currentString.substring(parts[i][0], parts[i][1] + 1);
+            int startIndex = parts[i][0];
+            int endIndex = parts[i][1] + 1;
+
+            String substring = currentString.substring(startIndex, endIndex);
             builder.append(substring);
         }
 

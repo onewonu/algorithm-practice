@@ -32,3 +32,6 @@
 - 각 `parts[i]`에 해당하는 부분 문자열을 추출하고, 이를 순서대로 이어 붙이면 `"programmers"`가 됩니다.
 
 결과적으로 `"programmers"`를 return 합니다.
+# 회고 
+### Reference
+[java 21 docs: String.substring(int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int,int))
