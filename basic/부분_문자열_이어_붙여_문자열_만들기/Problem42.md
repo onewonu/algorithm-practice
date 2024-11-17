@@ -5,23 +5,17 @@
 `parts[i]`는 `[s, e]` 형태로, `my_strings[i]`의 **인덱스 `s`부터 인덱스 `e`까지의 부분 문자열**을 의미합니다. 
 각 `my_strings`의 원소에서 `parts`에 해당하는 부분 문자열을 순서대로 이어 붙인 문자열을 return 하는 `solution` 함수를 작성하세요.
 
----
-
 ### 제한사항
 - $1 \leq \text{my_strings의 길이} = \text{parts의 길이} \leq 100$
 - $1 \leq \text{my_strings의 원소의 길이} \leq 100$
 - `parts[i]`를 $[s, e]$라 할 때:
     - $0 \leq s \leq e < \text{my_strings[i]의 길이}$
 
----
-
 ### 입출력 예
 
 | my_strings                                              | parts                              | result          |
 |---------------------------------------------------------|------------------------------------|-----------------|
 | `["progressive", "hamburger", "hammer", "ahocorasick"]` | `[[0, 4], [1, 2], [3, 5], [7, 7]]` | `"programmers"` |
-
----
 
 ### 입출력 예 설명
 

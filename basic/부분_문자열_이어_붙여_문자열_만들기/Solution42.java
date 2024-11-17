@@ -14,7 +14,14 @@ public class Solution42 {
     }
 
     public String solution(String[] my_strings, int[][] parts) {
-        String answer = "";
-        return answer;
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < my_strings.length; i++) {
+            String currentString = my_strings[i];
+            String substring = currentString.substring(parts[i][0], parts[i][1] + 1);
+            builder.append(substring);
+        }
+
+        return builder.toString();
     }
 }
