@@ -32,3 +32,18 @@
 - 입력 문자열: `"He110W0r1d"`, 길이: `10`
 - 뒤의 `5`글자: `"W0r1d"`
 - 따라서 `"W0r1d"`을 return 합니다.
+# 회고
+### 다른 방법: StringBuilder
+```java
+public String solution(String my_string, int n) {
+    StringBuilder builder = new StringBuilder();
+
+    for (int i = my_string.length() - n; i < my_string.length(); i++) {
+        builder.append(my_string.charAt(i));
+    }
+
+    return builder.toString();
+}
+```
+### Reference
+[java 21 docs: String.substring(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int))
