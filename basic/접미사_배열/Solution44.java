@@ -1,5 +1,6 @@
 package basic.접미사_배열;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Solution44 {
@@ -15,7 +16,18 @@ public class Solution44 {
     }
 
     public String[] solution(String my_string) {
-        String[] answer = {};
-        return answer;
+        StringBuilder builder = new StringBuilder();
+
+        // TODO: 접미사 배열 생성
+        for (int i = 1; i < my_string.length(); i++) {
+            String substring = my_string.substring(i, i + 1);
+            System.out.println("substring = " + substring);
+        }
+
+        // TODO: 사전순 정렬
+
+        // TODO: 접미사 배열 반환
+
+        return null;
     }
 }
