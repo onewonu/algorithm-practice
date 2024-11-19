@@ -35,3 +35,12 @@
 - 입력 문자열: `"programmers"`
 - 모든 접미사: `"programmers"`, `"rogrammers"`, `"ogrammers"`, `"grammers"`, `"rammers"`, `"ammers"`, `"mmers"`, `"mers"`, `"ers"`, `"rs"`, `"s"`
 - 사전순 정렬 결과: `["ammers", "ers", "grammers", "mers", "mmers", "ogrammers", "programmers", "rammers", "rogrammers", "rs", "s"]`
+# 회고
+### substring()
+**주어진 문자열에서 index 위치부터 끝까지의 문자열을 반환한다.**
+- 동일한 사용방법
+  - substring(i, my_string.length())
+  - substring(i)
+# Reference
+[java 21 docs: String.substring(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int))  
+[java 21 docs: Arrays.sort(Object[])](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#sort(java.lang.Object[]))
