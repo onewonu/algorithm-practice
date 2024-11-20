@@ -40,3 +40,11 @@
 
 #### 예제 4
 - `is_suffix = "abanana"`는 `my_string = "banana"`보다 길기 때문에 접미사가 될 수 없습니다. 따라서, `0`을 return 합니다.
+# 회고
+### endsWith
+> **Method Signature**  
+> public boolean endsWith(String suffix)
+- 현재 문자열의 길이(this.length())가 접미사 길이(suffix.length())보다 짧으면 **false**를 반환.
+- 접미사 길이만큼 문자열의 끝부분을 **substring 또는 startsWith**로 비교.
+### Reference
+[java 21 docs: String.endsWith(String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#endsWith(java.lang.String))
