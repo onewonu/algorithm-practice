@@ -1,7 +1,5 @@
 package basic.접미사_인지_확인하기;
 
-import java.util.Arrays;
-
 public class Solution45 {
     public static void main(String[] args) {
         Solution45 solution = new Solution45();
@@ -21,7 +19,10 @@ public class Solution45 {
 
         String[] suffix = new String[my_string.length()];
         for (int i = 0; i < my_string.length(); i++) {
+
+            // TODO: 접미사 생성 시 O(n^2) 시간 복잡도를 가진다.
             suffix[i] = my_string.substring(i);
+
         }
 
         for (String s : suffix) {
