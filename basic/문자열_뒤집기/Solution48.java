@@ -13,7 +13,15 @@ public class Solution48 {
     }
 
     public String solution(String my_string, int s, int e) {
-        String answer = "";
-        return answer;
+        char[] charArray = my_string.toCharArray();
+        while (s < e) {
+            char temp = charArray[s];
+            charArray[s] = charArray[e];
+            charArray[e] = temp;
+            s++;
+            e--;
+        }
+
+        return new String(charArray);
     }
 }
