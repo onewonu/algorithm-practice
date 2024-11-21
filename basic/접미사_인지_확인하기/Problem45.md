@@ -43,8 +43,16 @@
 # 회고
 ### endsWith
 > **Method Signature**  
-> public boolean endsWith(String suffix)
-- 현재 문자열의 길이(this.length())가 접미사 길이(suffix.length())보다 짧으면 **false**를 반환.
-- 접미사 길이만큼 문자열의 끝부분을 **substring 또는 startsWith**로 비교.
+> public boolean startsWith(String prefix)
+```java
+public boolean startsWith(String prefix) { return startsWith(prefix, 0); }
+public boolean endsWith(String suffix) { return startsWith(suffix, length() - suffix.length()); }
+```
+- startsWith(String prefix)
+    - 호출 문자열(this)의 0번 인덱스부터 시작해서 **prefix**와 비교.
+    - 내부적으로 startsWith(String prefix, int toffset)를 호출하며, toffset은 항상 0.
+- endsWith(String suffix)
+    - 호출 문자열(this)의 끝부분에서 suffix.length()만큼의 문자열을 suffix와 비교.
+    - 내부적으로 startsWith(String prefix, int toffset)를 호출하며, toffset은 length() - suffix.length().
 ### Reference
 [java 21 docs: String.endsWith(String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#endsWith(java.lang.String))
