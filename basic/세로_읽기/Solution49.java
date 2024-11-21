@@ -1,5 +1,7 @@
 package basic.세로_읽기;
 
+import java.util.Arrays;
+
 public class Solution49 {
     public static void main(String[] args) {
         Solution49 solution = new Solution49();
@@ -14,6 +16,12 @@ public class Solution49 {
 
     public String solution(String my_string, int m, int c) {
         String answer = "";
+
+        for (int i = 0; i < my_string.length(); i += 4) {
+            String substring = my_string.substring(i, i + m);
+            System.out.println("substring = " + substring);
+        }
+
         return answer;
     }
 }
