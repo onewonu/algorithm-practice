@@ -13,15 +13,12 @@ public class Solution48 {
     }
 
     public String solution(String my_string, int s, int e) {
-        char[] charArray = my_string.toCharArray();
-        while (s < e) {
-            char temp = charArray[s];
-            charArray[s] = charArray[e];
-            charArray[e] = temp;
-            s++;
-            e--;
-        }
+        String before = my_string.substring(0, s);
+        String after = my_string.substring(e + 1);
 
-        return new String(charArray);
+        String substring = my_string.substring(s, e + 1);
+        StringBuilder reverse = new StringBuilder(substring).reverse();
+
+        return before + reverse + after;
     }
 }
