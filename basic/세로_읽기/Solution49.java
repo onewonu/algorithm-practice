@@ -1,7 +1,5 @@
 package basic.세로_읽기;
 
-import java.util.Arrays;
-
 public class Solution49 {
     public static void main(String[] args) {
         Solution49 solution = new Solution49();
@@ -18,7 +16,7 @@ public class Solution49 {
         int row = my_string.length() / m;
         int col = m;
 
-        if(m == 1 && c == 1) {
+        if(my_string.length() == row) {
             return my_string;
         } else {
             String[][] myStrings = new String[row][col];
@@ -30,9 +28,7 @@ public class Solution49 {
 
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < myStrings.length; i++) {
-                String s = myStrings[i][c - 1];
-
-                builder.append(s);
+                builder.append(myStrings[i][c - 1]);
             }
             return builder.toString();
         }
