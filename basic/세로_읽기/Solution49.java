@@ -15,13 +15,26 @@ public class Solution49 {
     }
 
     public String solution(String my_string, int m, int c) {
-        String answer = "";
+        int row = my_string.length() / m;
+        int col = m;
 
-        for (int i = 0; i < my_string.length(); i += 4) {
-            String substring = my_string.substring(i, i + m);
-            System.out.println("substring = " + substring);
+        if(m == 1 && c == 1) {
+            return my_string;
+        } else {
+            String[][] myStrings = new String[row][col];
+            for (int i = 0; i < myStrings.length; i++) {
+                for (int j = 0; j < myStrings[i].length; j++) {
+                    myStrings[i][j] = String.valueOf(my_string.charAt(i * m + j));
+                }
+            }
+
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < myStrings.length; i++) {
+                String s = myStrings[i][c - 1];
+
+                builder.append(s);
+            }
+            return builder.toString();
         }
-
-        return answer;
     }
 }
