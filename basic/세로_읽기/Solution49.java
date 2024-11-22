@@ -16,21 +16,17 @@ public class Solution49 {
         int row = my_string.length() / m;
         int col = m;
 
-        if(my_string.length() == row) {
-            return my_string;
-        } else {
-            String[][] myStrings = new String[row][col];
-            for (int i = 0; i < myStrings.length; i++) {
-                for (int j = 0; j < myStrings[i].length; j++) {
-                    myStrings[i][j] = String.valueOf(my_string.charAt(i * m + j));
-                }
-            }
+        if (my_string.length() == row) return my_string;
 
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < myStrings.length; i++) {
-                builder.append(myStrings[i][c - 1]);
+        String[][] myStrings = new String[row][col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                myStrings[i][j] = String.valueOf(my_string.charAt(i * col + j));
             }
-            return builder.toString();
         }
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < row; i++) builder.append(myStrings[i][c - 1]);
+        return builder.toString();
     }
 }
