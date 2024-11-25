@@ -1,5 +1,6 @@
 package basic.qr_code;
 
+
 public class Solution50 {
     public static void main(String[] args) {
         Solution50 solution = new Solution50();
@@ -13,7 +14,11 @@ public class Solution50 {
     }
 
     public String solution(int q, int r, String code) {
-        String answer = "";
-        return answer;
+        StringBuilder answer = new StringBuilder();
+        for (int i = 0; i < code.length(); i++) {
+            if (i % q == r) answer.append(code.charAt(i));
+        }
+
+        return answer.toString();
     }
 }
