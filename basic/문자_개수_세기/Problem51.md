@@ -41,3 +41,9 @@
   \[
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0]
   \]
+# 회고
+
+### Reference
+[ascii-code](https://www.ascii-code.com/)  
+[java 21 docs: Character.isUpperCase(char)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html#isUpperCase(char))  
+[java 21 docs: Character.isLowerCase(char)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html#isLowerCase(char))

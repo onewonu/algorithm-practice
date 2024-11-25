@@ -2,6 +2,7 @@ package basic.문자_개수_세기;
 
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Solution51 {
     public static void main(String[] args) {
@@ -15,7 +16,17 @@ public class Solution51 {
     }
 
     public int[] solution(String my_string) {
-        int[] answer = {};
+        final int ALPHABET_COUNT = 26;
+        int[] answer = new int[ALPHABET_COUNT * 2];
+
+        for (char ch : my_string.toCharArray()) {
+            int index = 0;
+            if (Character.isUpperCase(ch)) index = ch - 'A';
+            else if (Character.isLowerCase(ch)) index = ch - 'a' + ALPHABET_COUNT;
+
+            answer[index]++;
+        }
+
         return answer;
     }
 }
