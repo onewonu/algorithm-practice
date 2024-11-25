@@ -43,3 +43,24 @@
 #### 예제 2
 - 예제 2번의 my_string 은 m이 1이므로 세로로 "programmers"를 적는 것과 같고 따라서 1열에 적힌 글자를 세로로 읽으면 programmers 입니다.  
 따라서 "programmers"를 return 합니다.
+# 회고
+### 01 2차원 배열
+```java
+public String solution(String my_string, int m, int c) {
+    int row = my_string.length() / m;
+    int col = m;
+
+    if (my_string.length() == row) return my_string;
+
+    String[][] myStrings = new String[row][col];
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            myStrings[i][j] = String.valueOf(my_string.charAt(i * col + j));
+        }
+    }
+
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < row; i++) builder.append(myStrings[i][c - 1]);
+    return builder.toString();
+}
+```
