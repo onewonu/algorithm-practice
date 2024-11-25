@@ -14,19 +14,8 @@ public class Solution49 {
 
     public String solution(String my_string, int m, int c) {
         int row = my_string.length() / m;
-        int col = m;
-
-        if (my_string.length() == row) return my_string;
-
-        String[][] myStrings = new String[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                myStrings[i][j] = String.valueOf(my_string.charAt(i * col + j));
-            }
-        }
-
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < row; i++) builder.append(myStrings[i][c - 1]);
+        for (int i = 0; i < row; i++) builder.append(my_string.charAt(i * m + (c - 1)));
         return builder.toString();
     }
 }

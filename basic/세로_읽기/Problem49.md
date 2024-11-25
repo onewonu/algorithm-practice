@@ -64,3 +64,19 @@ public String solution(String my_string, int m, int c) {
     return builder.toString();
 }
 ```
+### 02 논리적 2차원 배열
+```java
+public String solution(String my_string, int m, int c) {
+    int row = my_string.length() / m;
+    StringBuilder builder = new StringBuilder();
+    
+    for (int i = 0; i < row; i++) {
+        int index = i * m + (c - 1);
+        builder.append(my_string.charAt(index));
+    }
+
+    return builder.toString();
+}
+```
+- 2차원 배열에서 특정 위치의 데이터를 1차원 배열로 변환
+    - 1차원 인덱스 = (행 번호 × 한 행의 열 개수) + 열 번호
