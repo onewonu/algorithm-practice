@@ -44,3 +44,30 @@
   | 나머지   | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0  |
 
 - 나머지가 `0`인 모든 문자를 추출하면 "programmers"입니다.
+# 회고 
+### 01 조건 명시
+```java
+public String solution(int q, int r, String code) {
+    StringBuilder answer = new StringBuilder();
+    for (int i = 0; i < code.length(); i++) {
+        if (i % q == r) answer.append(code.charAt(i));
+    }
+    
+    return answer.toString();
+}
+```
+### 02 조건 제거 후 반복문에서 조건 처리
+```java
+public String solution(int q, int r, String code) {
+    StringBuilder answer = new StringBuilder();
+    for (int i = r; i < code.length(); i += q) answer.append(code.charAt(i));
+    return answer.toString();
+}
+```
+- if (i % q == r)
+  - i를 q로 나누었을 때, 나머지가 r인 인덱스만 처리하겠다는 뜻.
+
+**if (i % q == r) 조건을 매번 검사하지 않으려면, 루프 자체가 조건을 만족하는 인덱스만 순회해야한다.**
+- for (int i = r; i < code.length(); i += q)
+  - 루프의 시작점: 나머지가 r인 첫 번째 인덱스에서 시작.
+  - 루프의 증가량: q씩 증가하여 항상 나머지가 r인 인덱스만 순회.
