@@ -1,8 +1,6 @@
 package basic.문자_개수_세기;
 
-
 import java.util.Arrays;
-import java.util.Locale;
 
 public class Solution51 {
     public static void main(String[] args) {
