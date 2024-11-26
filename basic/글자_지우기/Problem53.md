@@ -37,3 +37,34 @@
 ```plaintext
 result: "programmers"
 ```
+# 회고
+### Set
+> 중복된 요소를 허용하지 않고, 순서와 상관없이 고유한 요소들을 저장하는 자료구조.  
+### Set 의 구현 클래스
+#### HashSet
+- 내부적으로 해시 테이블을 기반으로 동작
+- 요소의 순서를 보장하지 않음
+- 삽입, 삭제, 탐색이 평균적으로 $O(1)$ 의 시간 복잡도를 가짐
+#### LinkedHashSet
+- HashSet 의 특성
+- 삽입 순서 유지
+#### TreeSet
+- 내부적으로 이진 검색 트리 기반
+- 요소를 정렬된 상태로 유지
+- - 삽입, 삭제, 탐색이 $O(log n)$ 의 시간 복잡도를 가짐
+#### EnumSet
+- Enum 타입 전용 
+- 내부적으로 비트 벡터를 사용하여 최적화
+- 상수 순서 보장
+### Set 구현체 선택
+| 고려 사항            | 구현체           |
+|------------------|---------------|
+| 중복제거, 순서 상관 없음   | HashSet       |
+| 중복 제거, 삽입 순서 유지  | LinkedHashSet |
+| 중복 제거, 정렬된 상태 유지 | TreeSet       |
+| Enum 타입          | EnumSet       |
+### Reference
+[java 21 docs: util.Set](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html)  
+[java 21 docs: util.HashSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html)  
+[java 21 docs: util.LinkedHashSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedHashSet.html)  
+[java 21 docs: ]()
