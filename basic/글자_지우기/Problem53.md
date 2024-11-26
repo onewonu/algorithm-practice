@@ -66,5 +66,4 @@ result: "programmers"
 ### Reference
 [java 21 docs: util.Set](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html)  
 [java 21 docs: util.HashSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashSet.html)  
-[java 21 docs: util.LinkedHashSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedHashSet.html)  
-[java 21 docs: ]()
+[java 21 docs: util.LinkedHashSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedHashSet.html)
