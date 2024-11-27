@@ -15,25 +15,18 @@ public class Solution58 {
     }
 
     public int[] solution(int[] arr, int[][] intervals) {
-        int i1 = intervals[0][0];
-        int i2 = intervals[0][1];
-        int i3 = intervals[1][0];
-        int i4 = intervals[1][1];
+        int firstStart = intervals[0][0];
+        int firstEnd = intervals[0][1];
+        int secondStart = intervals[1][0];
+        int secondEnd = intervals[1][1];
 
         Stack<Integer> stack = new Stack<>();
 
-        for (int i = i1; i <= i2; i++) {
-            stack.push(arr[i]);
-        }
-
-        for (int j = i3; j <= i4; j++) {
-            stack.push(arr[j]);
-        }
+        for (int i = firstStart; i <= firstEnd; i++) stack.push(arr[i]);
+        for (int i = secondStart; i <= secondEnd; i++) stack.push(arr[i]);
 
         int[] result = new int[stack.size()];
-        for (int i = 0; i < stack.size(); i++) {
-            result[i] = stack.get(i);
-        }
+        for (int i = stack.size() - 1; i >= 0; i--) result[i] = stack.pop();
 
         return result;
     }
