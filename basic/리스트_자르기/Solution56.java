@@ -15,33 +15,46 @@ public class Solution56 {
     }
 
     public int[] solution(int n, int[] slicer, int[] num_list) {
-        int start = 0;
-        int end = 0;
-        int step = 1;
-
-        if (n == 1) {
-            end = slicer[1];
-        } else if (n == 2) {
-            start = slicer[0];
-            end = num_list.length -1;
-        } else if (n == 3) {
-            start = slicer[0];
-            end = slicer[1];
-        } else if (n == 4) {
-            start = slicer[0];
-            end = slicer[1];
-            step = slicer[2];
-        }
+        int[] sliceParams = getSliceParams(n, slicer, num_list);
+        int start = sliceParams[0];
+        int end = sliceParams[1];
+        int step = sliceParams[2];
 
         int size = (end - start + step) / step;
         int[] answer = new int[size];
-        int index = 0;
 
-        for (int i = start; i <= end; i += step) {
-            answer[index] = num_list[i];
-            index++;
+        for (int i = 0, currentIndex = start;
+             i < size;
+             i++, currentIndex += step
+        ) {
+            answer[i] = num_list[currentIndex];
         }
 
         return answer;
+    }
+
+    private int[] getSliceParams(int n, int[] slicer, int[] num_list) {
+        int start = 0, end = 0, step = 1;
+
+        switch (n) {
+            case 1 -> {
+                end = slicer[1];
+            }
+            case 2 -> {
+                start = slicer[0];
+                end = num_list.length - 1;
+            }
+            case 3 -> {
+                start = slicer[0];
+                end = slicer[1];
+            }
+            case 4 -> {
+                start = slicer[0];
+                end = slicer[1];
+                step = slicer[2];
+            }
+        }
+
+        return new int[]{start, end, step};
     }
 }
