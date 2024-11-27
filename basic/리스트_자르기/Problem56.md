@@ -17,10 +17,10 @@
 - `n`은 1, 2, 3, 4 중 하나입니다.
 - `slicer`의 길이 = 3
     - `slicer`에 담긴 정수를 차례대로 `a`, `b`, `c`라고 할 때:
-        - \( 0 \leq a \leq b \leq \text{num_list의 길이} - 1 \)
-        - \( 1 \leq c \leq 3 \)
-- \( 5 \leq \text{num_list의 길이} \leq 30 \)
-- \( 0 \leq \text{num_list의 원소} \leq 100 \)
+        - $( 0 \leq a \leq b \leq \text{num_list의 길이} - 1 )$
+        - $( 1 \leq c \leq 3 )$
+- $( 5 \leq \text{num_list의 길이} \leq 30 )$
+- $( 0 \leq \text{num_list의 원소} \leq 100 )$
 
 ---
 
