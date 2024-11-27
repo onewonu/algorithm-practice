@@ -42,3 +42,28 @@
 ### 입출력 예 #2
 - `n = 4`, `slicer = [1, 5, 2]`
 - `num_list`에서 **1번 인덱스부터 5번 인덱스까지 2개 간격**으로 자르면 `[2, 4, 6]`이 됩니다.
+# 회고
+### 간격이 존재하는 배열 초기화
+#### Length of range
+$$
+\text{Length of range} = endIndex - startIndex + 1 
+$$
+***
+#### Elements by interval
+$$
+\text{Elements by interval} = \text{Length of range} / \text{intervalIndex} 
+$$
+- 정수 나누기 연산은 항상 내림 연산을 수행.
+  - ex) $(5 - 1 + 1) / 2 = 2.5$
+- 슬라이싱 작업에서는 마지막 부분 요소도 포함되어 소수점이 발생하는 경우 올림 해야한다.  
+  - $\text{요소 개수} = \frac{\text{범위 길이} + (\text{intervalIndex} - 1)}{\text{intervalIndex}}$
+*** 
+#### 적용
+$$
+\frac{(\text{endIndex} - \text{startIndex} + 1) + (\text{intervalIndex} - 1)}{\text{intervalIndex}} 
+$$
+***
+#### 정리
+$$
+\frac{\text{endIndex} - \text{startIndex} + \text{intervalIndex}}{\text{intervalIndex}}
+$$
