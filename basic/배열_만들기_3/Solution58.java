@@ -1,7 +1,6 @@
 package basic.배열_만들기_3;
 
 import java.util.Arrays;
-import java.util.Stack;
 
 public class Solution58 {
     public static void main(String[] args) {
@@ -17,17 +16,16 @@ public class Solution58 {
     public int[] solution(int[] arr, int[][] intervals) {
         int firstStart = intervals[0][0];
         int firstEnd = intervals[0][1];
+        int firstSize = firstEnd - firstStart + 1;
+
         int secondStart = intervals[1][0];
         int secondEnd = intervals[1][1];
+        int secondSize = secondEnd - secondStart + 1;
 
-        Stack<Integer> stack = new Stack<>();
+        int[] answer = new int[firstSize + secondSize];
+        System.arraycopy(arr, firstStart, answer, 0, firstSize);
+        System.arraycopy(arr, secondStart, answer, firstSize, secondSize);
 
-        for (int i = firstStart; i <= firstEnd; i++) stack.push(arr[i]);
-        for (int i = secondStart; i <= secondEnd; i++) stack.push(arr[i]);
-
-        int[] result = new int[stack.size()];
-        for (int i = stack.size() - 1; i >= 0; i--) result[i] = stack.pop();
-
-        return result;
+        return answer;
     }
 }
