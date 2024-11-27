@@ -67,3 +67,40 @@ $$
 $$
 \frac{\text{endIndex} - \text{startIndex} + \text{intervalIndex}}{\text{intervalIndex}}
 $$
+### 다른 방법: Stream API
+```java
+import java.util.stream.IntStream;
+
+public int[] solution(int n, int[] slicer, int[] num_list) {
+    int[] sliceParams = getSliceParams(n, slicer, num_list);
+    int start = sliceParams[0];
+    int end = sliceParams[1];
+    int step = sliceParams[2];
+
+    return IntStream.rangeClosed(start, end)
+            .filter(i -> (i - start) % step == 0)
+            .map(i -> num_list[i])
+            .toArray();
+}
+```
+- (i - start) % step == 0
+  - i와 start 의 차이가 step 으로 나누어떨어지는지 확인.
+  - step 간격으로 인덱스를 선택하려는 목적.
+
+```
+ex)
+- 입력
+  - start = 1, end = 9, step = 2
+  - IntStream.rangeClosed(start, end) → [1, 2, 3, 4, 5, 6, 7, 8, 9]
+- 동작
+  - 1 - 1 % 2 = 0 % 2 = 0 → 선택됨
+  - 2 - 1 % 2 = 1 % 2 ≠ 0 → 제외됨
+  - 3 - 1 % 2 = 2 % 2 = 0 → 선택됨
+  - …
+  - 9 - 1 % 2 = 8 % 2 = 0 → 선택됨
+```
+     
+     
+     
+                               
+     
