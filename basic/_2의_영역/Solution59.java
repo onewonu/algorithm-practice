@@ -17,30 +17,23 @@ public class Solution59 {
     }
 
     public int[] solution(int[] arr) {
-        // TODO: 처음으로 2를 만났을 때 startIndex 를 설정.
-        // TODO: 2를 만날 때마다 endIndex 를 갱신.
-        // TODO: 만약 startIndex 와 endIndex 가 갱신되지 않았다면, 배열에 2가 없는 것이므로 [-1]을 반환.
+        final int NOT_FOUND = -1;
 
-        int start = -1;
-        int end = 0;
+        int start = NOT_FOUND;
+        int end = NOT_FOUND;
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 2) {
-                if (start == -1) {
-                    start = i;
-                }
+                if (start == NOT_FOUND) start = i;
                 end = i;
             }
         }
 
-        if (start == -1) {
-            return new int[]{-1};
-        }
+        if (start == -1) return new int[]{NOT_FOUND};
 
-        int[] answer = new int[end - start + 1];
-        for (int i = start; i <= end; i++) {
-            answer[i - start] = arr[i];
-        }
+        int size = end - start + 1;
+        int[] answer = new int[size];
+        System.arraycopy(arr, start, answer, 0, size);
 
         return answer;
     }
