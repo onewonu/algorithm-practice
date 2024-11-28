@@ -43,3 +43,20 @@
 | 2        | [1, 2, 3, 4]       | [1, 2, 3]       | **짝수 인덱스**: 뒷부분 제거 |
 
 따라서 `[1, 2, 3]`을 반환합니다.
+# 회고
+### 초기화
+- start
+  - 현재 남은 배열의 시작 인덳스 추적.
+- end
+  - (현재 남은 배열의 끝 + 1) 인덱스를 추적. 
+  - 초기 상태에서는 배열의 모든 요소가 포함되므로 끝 인덱스는 배열의 전체 길이를 할당.
+### 잘라내기: 뒷부분
+- 짝수 인덱스는 뒷부분을 잘라낸다.
+- 범위는 start 로 시작하여 query[i] 인덱스까지 포함해야 한다.
+- copyOfRange 의 종료인덱스 미포함으로 인한 (end + 1)
+### 잘라내기: 앞부분
+- 홀수 인덱스는 앞부분을 잘라낸다.
+- 범위는 query[i] 인덱스 이후.
+- start 는 이전 시작 위치를 포함하고 있음으로 누적한다.
+### Reference
+[java 21 docs: Arrays.copyOfRange(int[],int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#copyOfRange(int[],int,int))
