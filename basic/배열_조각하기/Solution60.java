@@ -14,7 +14,17 @@ public class Solution60 {
     }
 
     public int[] solution(int[] arr, int[] query) {
-        int[] answer = {};
-        return answer;
+        int start = 0;
+        int end = 0;
+
+        for (int q : query) {
+            if (q % 2 == 0 && q > end) {
+                end = q;
+            } else if (q % 2 == 1) {
+                start = q;
+            }
+        }
+
+        return Arrays.copyOfRange(arr, start, end);
     }
 }
