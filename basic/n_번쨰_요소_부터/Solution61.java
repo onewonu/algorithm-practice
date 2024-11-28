@@ -15,8 +15,15 @@ public class Solution61 {
     }
 
     public int[] solution(int[] num_list, int n) {
-        int[] anwser = new int[num_list.length - (n - 1)];
+        int[] answer = new int[num_list.length - (n - 1)];
 
-        return null;
+        for (int index = 0, i = n - 1;
+             i < num_list.length;
+             index++, i++
+        ) {
+            answer[index] = num_list[i];
+        }
+
+        return answer;
     }
 }
