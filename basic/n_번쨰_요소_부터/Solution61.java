@@ -6,6 +6,7 @@ public class Solution61 {
     public static void main(String[] args) {
         Solution61 solution = new Solution61();
         runTest(solution, new int[] {2, 1, 6}, 3);
+        runTest(solution, new int[] {5, 2, 1, 7, 5}, 2);
     }
 
     private static void runTest(Solution61 solution, int[] num_list, int n) {
@@ -14,7 +15,8 @@ public class Solution61 {
     }
 
     public int[] solution(int[] num_list, int n) {
-        int[] answer = {};
-        return answer;
+        int[] anwser = new int[num_list.length - (n - 1)];
+
+        return null;
     }
 }
