@@ -38,3 +38,35 @@
   - n 번째까지의 원소: `[5, 2, 1]`.
 **병합**:
   - `[7, 5] + [5, 2, 1] = [7, 5, 5, 2, 1]`.
+# 회고
+### 다른 사람의 풀이
+```java
+public int[] solution(int[] num_list, int n) {
+    return IntStream.range(0, num_list.length)
+            .map(i -> num_list[(i + n) % num_list.length])
+            .toArray();
+}
+```
+**순서**
+- IntStream.range(0, num_list.length)
+  - 0부터 num_list.length - 1까지의 정수 스트림을 생성.
+  - 배열의 각 인덱스를 순회하기 위한 범위를 만든다.
+- .map(i -> num_list[(i + n) % num_list.length]):
+  - 각 i에 대해, **(i + n) % num_list.length**를 계산하여 원본 배열의 새로운 위치를 찾아낸다.
+  - 이 식은 배열을 순환하며 새 인덱스를 결정.
+    - i + n:
+      - 원래 인덱스 i에 이동할 만큼의 값 n을 더한다.
+    - % num_list.length:
+      - 배열의 길이로 나눈 나머지를 사용하여 인덱스를 배열 범위 안으로 제한.
+      - 이는 배열의 끝을 넘어서는 값이 처음으로 순환되도록 보장.
+- .toArray():
+  - 스트림에서 변환된 값을 배열로 수집하여 최종 결과를 반환.
+**(i + n) \% num_list.length**
+- 배열 범위를 초과하지 않도록 순환.
+- 나머지 연산(%)은 값이 범위를 벗어날 때 순환하는 효과를 만들 수 있다.
+- ex)
+  - i = 0 :  (0 + 3) \% 5 = 3
+  - i = 1 :  (1 + 3) \% 5 = 4
+  - i = 2 :  (2 + 3) \% 5 = 0
+  - i = 3 :  (3 + 3) \% 5 = 1
+  - i = 4 :  (4 + 3) \% 5 = 2
