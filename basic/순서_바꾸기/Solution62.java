@@ -16,16 +16,10 @@ public class Solution62 {
 
     public int[] solution(int[] num_list, int n) {
         int[] answer = new int[num_list.length];
+        int startIndex = 0;
         int splitPoint = num_list.length - n;
-
-        for (int i = 0; i < splitPoint; i++) {
-            answer[i] = num_list[n + i];
-        }
-
-        for (int i = 0; i < n; i++) {
-            answer[splitPoint + i] = num_list[i];
-        }
-
+        System.arraycopy(num_list, n, answer, startIndex, splitPoint);
+        System.arraycopy(num_list, startIndex, answer, splitPoint, n);
         return answer;
     }
 }
