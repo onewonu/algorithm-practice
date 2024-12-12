@@ -30,3 +30,11 @@
 
 #### 예제 #2
 - `"l"`의 왼쪽에 문자열이 없기 때문에 빈 리스트를 `return`합니다.
+# 회고
+### copyOfRange
+- Arrays.copyOfRange(original, from, to)
+  - original: 복사 대상이 되는 원본 배열.
+  - from: 복사 시작 인덱스(포함).
+  - to: 복사 끝 인덱스(포함되지 않음).
+### Reference
+[java 21 docs: Arrays.copyOfRange(int[],int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#copyOfRange(int[],int,int))

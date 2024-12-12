@@ -6,6 +6,7 @@ public class Solution63 {
     public static void main(String[] args) {
         Solution63 solution = new Solution63();
         runTest(solution, new String[] {"u", "u", "l", "r"});
+        runTest(solution, new String[] {"u", "u", "r", "n", "n"});
         runTest(solution, new String[] {"l"});
     }
 
@@ -15,7 +16,13 @@ public class Solution63 {
     }
 
     public String[] solution(String[] str_list) {
-        String[] answer = {};
-        return answer;
+        for (int i = 0; i < str_list.length; i++) {
+            if (str_list[i].equals("l")) {
+                return Arrays.copyOfRange(str_list, 0, i);
+            } else if (str_list[i].equals("r")) {
+                return Arrays.copyOfRange(str_list, i + 1, str_list.length);
+            }
+        }
+        return new String[] {};
     }
 }
