@@ -31,3 +31,30 @@
 
 #### 예제 #2
 - `[4, 2, 6, 1, 7, 6]`에서 **4개 간격**으로 저장된 원소들은 `[4, 7]`입니다.
+# 회고
+### 소수점 없는 정수 연산으로 올림 구현
+> (num_list.length + n - 1) / n
+-  n으로 나눌 때 남는 소수점 부분을 보완하기 위함
+### 다른 풀이 방법: List
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public int[] solution(int[] num_list, int n) {
+    List<Integer> resultList = new ArrayList<>();
+    for (int i = 0; i < num_list.length; i += n) {
+        resultList.add(num_list[i]);
+    }
+    return resultList.stream().mapToInt(Integer::intValue).toArray();
+}
+```
+### 다른 풀이 방법: Stream API
+```java
+import java.util.stream.IntStream;
+
+public int[] solution(int[] num_list, int n) {
+    return IntStream.range(0, (num_list.length + n - 1) / n) 
+                    .map(i -> num_list[i * n])            
+                    .toArray();
+}
+```
