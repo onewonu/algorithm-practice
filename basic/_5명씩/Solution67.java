@@ -16,9 +16,17 @@ public class Solution67 {
     private static final int GROUP_SIZE = 5;
 
     public String[] solution(String[] names) {
-        int size = (names.length + GROUP_SIZE - 1) / GROUP_SIZE;
-        String[] answer = new String[size];
-        for (int i = 0; i < size; i++) answer[i] = names[i * GROUP_SIZE];
-        return answer;
+        int groupCount = (names.length + GROUP_SIZE - 1) / GROUP_SIZE;
+        String[][] groupedNames = new String[groupCount][GROUP_SIZE];
+
+        for (int i = 0; i < names.length; i++) {
+            groupedNames[i / GROUP_SIZE][i % GROUP_SIZE] = names[i];
+        }
+
+        String[] result = new String[groupCount];
+        for (int i = 0; i < groupCount; i++) {
+            result[i] = groupedNames[i][0];
+        }
+        return result;
     }
 }

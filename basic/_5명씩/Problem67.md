@@ -33,3 +33,15 @@
     - 그룹 2의 첫 번째 사람: `"vex"`
 
 따라서 결과는 `["nami", "vex"]`입니다.
+# 회고
+### 일반 인덱스 조작
+요구사항에 맞는 응답값을 맞추기 위해 인덱스 조작에 중심.
+- for (int i = 0; i < size; i++) answer[i] = names[i * GROUP_SIZE];
+### 그룹화된 구조: 2차원 배열
+- 각 그룹을 2차원 배열의 행으로 저장
+
+| 그룹번호 | index 0 | index 1 | index 2 | index 3 | index 4 |
+|------|---------|---------|---------|---------|---------|
+| 0번째  | nami    | ahri    | jayce   | garen   | ivern   |
+| 1번째  | vex     | jinx    | null    | null    | null    |
+  
