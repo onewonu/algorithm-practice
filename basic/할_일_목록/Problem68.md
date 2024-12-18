@@ -36,3 +36,29 @@
 - **"studygraph"** (index 3)
 
 따라서, `["practiceguitar", "studygraph"]`를 return 합니다.
+# 회고
+### 리스트
+```java
+public String[] solution(String[] todo_list, boolean[] finished) {
+    List<String> unfinishedTasks = new ArrayList<>();
+
+    for (int i = 0; i < todo_list.length; i++) {
+        if (!finished[i]) {
+            unfinishedTasks.add(todo_list[i]);
+        }
+    }
+
+    return unfinishedTasks.toArray(new String[0]);
+}
+```
+### Stream API
+```java
+import java.util.stream.IntStream;
+
+public String[] solution(String[] todo_list, boolean[] finished) {
+    return IntStream.range(0, todo_list.length)
+        .filter(i -> !finished[i]) 
+        .mapToObj(i -> todo_list[i]) 
+        .toArray(String[]::new);
+}
+```
