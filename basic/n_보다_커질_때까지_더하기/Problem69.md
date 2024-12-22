@@ -48,4 +48,5 @@ public int solution(int[] numbers, int n) {
 1. 스트림의 요소를 순차적으로 평가.
 2. 주어진 조건을 만족하는 동안 요소를 유지.
 3. 조건이 만족되지 않는 첫 번째 요소를 만나면 평가를 중단하고 그 이후의 요소는 처리하지 않는다.
+### Reference
 [java 21 docs: takeWhile](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#takeWhile(java.util.function.IntPredicate))
