@@ -14,7 +14,12 @@ public class Solution70 {
     }
 
     public int[] solution(int[] arr, int[][] queries) {
-        int[] answer = {};
-        return answer;
+        for (int[] query : queries) {
+            for (int j = query[0]; j < query[1] + 1; j++) {
+                arr[j] += 1;
+            }
+        }
+
+        return arr;
     }
 }
