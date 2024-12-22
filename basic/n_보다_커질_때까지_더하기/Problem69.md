@@ -34,3 +34,18 @@
 ### 예제 2번
 `numbers`의 마지막 원소 전까지의 원소를 `sum`에 더하면 139입니다.  
 139는 `n` 값인 139보다 크지 않고 마지막 원소인 100을 더하면 139보다 커지므로 239를 `return` 합니다.
+# 회고
+### 다른 풀이 방법: Stream API
+```java
+public int solution(int[] numbers, int n) {
+    final int[] sum = {0};
+    return Arrays.stream(numbers)
+                 .takeWhile(num -> (sum[0] += num) <= n)
+                 .sum();
+}
+```
+**takeWhile**
+1. 스트림의 요소를 순차적으로 평가.
+2. 주어진 조건을 만족하는 동안 요소를 유지.
+3. 조건이 만족되지 않는 첫 번째 요소를 만나면 평가를 중단하고 그 이후의 요소는 처리하지 않는다.
+[java 21 docs: takeWhile](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html#takeWhile(java.util.function.IntPredicate))
