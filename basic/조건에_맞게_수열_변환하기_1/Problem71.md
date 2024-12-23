@@ -31,3 +31,16 @@
 - 원소 100과 98은 `50 이상의 짝수`이므로 각각 `2로 나눕니다`: 100 → 50, 98 → 49
 - 나머지 값(2, 99)은 조건에 해당하지 않으므로 변경하지 않습니다.
 - 따라서 결과는 `[2, 2, 6, 50, 99, 49]`입니다.
+# 회고
+### 다른 풀이 방법: Stream API
+```java
+import java.util.stream.IntStream;
+
+public int[] solution(int[] arr) {
+    return IntStream.of(arr)
+            .map(num -> (num >= 50 && num % 2 == 0) ? num / 2 :
+                        (num < 50 && num % 2 == 1) ? num * 2 :
+                        num)
+            .toArray();
+}
+```
