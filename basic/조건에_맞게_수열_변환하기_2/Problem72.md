@@ -44,3 +44,39 @@
 
 이후로 `arr`가 변하지 않습니다.  
 즉, `arr(5) = arr(6)`이므로 **5**를 반환합니다.
+# 회고
+### 핵심 요구사항
+> 주어진 계산 규칙대로 배열을 처리하며, 배열이 더 이상 변화하지 않을 때까지 반복하는 것.
+### 다른 풀이 방법: Stream API
+```java
+import java.util.Arrays;
+
+public class Solution {
+    public int solution(int[] arr) {
+        int count = 0;
+
+        while (true) {
+            int[] newArr = Arrays.stream(arr)
+                    .map(this::transformElement)
+                    .toArray();
+            
+            if (Arrays.equals(arr, newArr)) break;
+            arr = newArr;
+
+            count++;
+        }
+
+        return count;
+    }
+    
+    private int transformElement(int num) {
+        if (num >= 50 && num % 2 == 0) {
+            return num / 2;
+        } else if (num < 50 && num % 2 == 1) {
+            return (num * 2) + 1;
+        } else {
+            return num;
+        }
+    }
+}
+```

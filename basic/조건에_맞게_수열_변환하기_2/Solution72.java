@@ -17,21 +17,23 @@ public class Solution72 {
         int count = 0;
 
         while (true) {
-            int[] newArr = new int[arr.length];
+            boolean isStable = true;
 
             for (int i = 0; i < arr.length; i++) {
+                int originValue = arr[i];
+
                 if (arr[i] >= 50 && arr[i] % 2 == 0) {
-                    newArr[i] = arr[i] / 2;
+                    arr[i] = arr[i] / 2;
                 } else if (arr[i] < 50 && arr[i] % 2 == 1) {
-                    newArr[i] = (arr[i] * 2) + 1;
-                } else {
-                    newArr[i] = arr[i];
+                    arr[i] = (arr[i] * 2) + 1;
+                }
+
+                if (arr[i] != originValue) {
+                    isStable = false;
                 }
             }
 
-            if (Arrays.equals(arr, newArr)) break;
-
-            arr = newArr;
+            if (isStable) break;
 
             count++;
         }
