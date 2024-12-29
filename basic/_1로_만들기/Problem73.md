@@ -36,3 +36,41 @@
 
 총 연산 횟수: $3 + 2 + 3 + 0 + 3 = 11$  
 따라서 `11`을 반환합니다.
+# 회고
+### 재귀 함수(Recursive Function)
+- 구조
+  - 종료 조건(Base Case)
+  - 재귀 호출(Recursive Case)
+- 실행 과정
+  - 각 함수 호출은 스택 메모리에 적재된다.
+  - 상위 호출이 종료되려면 하위 호출이 종료되어야 한다.
+- 고려 사항
+  - 명확한 종료 조건 설정
+  - 깊은 재귀 호출로 인해 스택 메모리 초과 
+  - 너무 큰 입력은 반복문으로 리펙토링
+#### 재귀 함수(Recursive Function): 팩토리얼
+```java
+public int factorial(int n) {
+    if (n == 1) return 1;
+    return n * factorial(n - 1);
+}
+```
+#### 재귀 함수(Recursive Function): 피보나치 수열
+_0 과 1 로 시작, 이전 두 숫자의 합으로 이루어진 수열._
+```java
+public int fibonacci(int n) {
+    if (n == 0) return 0; 
+    if (n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+#### 재귀 함수(Recursive Function): 이진 탐색
+```java
+public int binarySearch(int[] arr, int target, int start, int end) {
+    if (start > end) return -1;
+    int mid = (start + end) / 2;
+    if (arr[mid] == target) return mid;
+    if (arr[mid] > target) return binarySearch(arr, target, start, mid - 1);
+    return binarySearch(arr, target, mid + 1, end);
+}
+```
