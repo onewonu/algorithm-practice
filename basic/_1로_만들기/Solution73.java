@@ -14,7 +14,20 @@ public class Solution73 {
     }
 
     public int solution(int[] num_list) {
-        int answer = 0;
-        return answer;
+        int totalCount = 0;
+
+        for (int number : num_list) {
+            int count = 0;
+
+            while (number > 1) {
+                if (number % 2 == 0) number /= 2;
+                else number = (number - 1) / 2;
+                count++;
+            }
+
+            totalCount += count;
+        }
+
+        return totalCount;
     }
 }
