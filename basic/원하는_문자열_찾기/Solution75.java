@@ -13,9 +13,6 @@ public class Solution75 {
     }
 
     public int solution(String myString, String pat) {
-        if (myString.length() < pat.length()) return 0;
-        myString = myString.toLowerCase();
-        pat = pat.toLowerCase();
-        return myString.contains(pat) ? 1 : 0;
+        return myString.toLowerCase().contains(pat.toLowerCase()) ? 1 : 0;
     }
 }

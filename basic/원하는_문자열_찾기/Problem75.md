@@ -33,3 +33,6 @@
 #### 예제 #2
 - `myString = "aaAA"`의 길이가 `pat = "aaaaa"`보다 짧기 때문에 부분 문자열 중 같은 문자열이 존재할 수 없습니다.  
   따라서 **0**을 반환합니다.
+# 회고
+### Reference
+[java 21 docs: String.contains()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#contains(java.lang.CharSequence))
