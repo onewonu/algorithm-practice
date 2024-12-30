@@ -8,8 +8,8 @@
 ---
 
 ### 제한사항
-- $2 \leq \text{num\_list의 길이} \leq 20$
-- $1 \leq \text{num\_list의 원소} \leq 9$
+- $2 \leq \text{num_list의 길이} \leq 20$
+- $1 \leq \text{num_list의 원소} \leq 9$
 - `num_list`의 원소를 모두 곱했을 때 $2,147,483,647$을 넘는 입력은 주어지지 않습니다.
 
 ---
@@ -30,3 +30,6 @@
 
 #### 예제 #2
 - 리스트의 길이가 4이므로, 모든 원소의 곱인 $2 \times 3 \times 4 \times 5 = 120$을 반환합니다.
+# 회고
+### 다른 사람의 풀이: 삼항 연산자
+> int answer = (num_list.length < 11 ? 1 : 0);

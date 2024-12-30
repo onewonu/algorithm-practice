@@ -15,7 +15,18 @@ public class Solution74 {
     }
 
     public int solution(int[] num_list) {
-        int answer = 0;
+        final int LENGTH_THRESHOLD = 11;
+
+        int answer;
+
+        if (num_list.length >= LENGTH_THRESHOLD) {
+            answer = 0;
+            for (int num : num_list) answer += num;
+        } else {
+            answer = 1;
+            for (int num : num_list) answer *= num;
+        }
+
         return answer;
     }
 }
