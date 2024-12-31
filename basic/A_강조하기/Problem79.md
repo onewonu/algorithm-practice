@@ -36,3 +36,6 @@
   - 5번 인덱스의 `"a"`는 소문자이므로 대문자 `"A"`로 변환됩니다.
   - 다른 문자들은 모두 `"a"`가 아닌 소문자이므로 변하지 않습니다.
 - 결과적으로 `"progrAmmers"`가 반환됩니다.
+# 회고
+### Reference
+[java 21 docs: String.replace(char,char)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replace(char,char))
