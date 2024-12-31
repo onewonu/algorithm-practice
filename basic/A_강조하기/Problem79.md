@@ -37,5 +37,9 @@
   - 다른 문자들은 모두 `"a"`가 아닌 소문자이므로 변하지 않습니다.
 - 결과적으로 `"progrAmmers"`가 반환됩니다.
 # 회고
+### 요구사항 정리
+- "A" 가 아닌 모든 대문자 알파벳은 소문자 알파벳으로 변환.
+- "a" 가 등장하면 전부 "A" 로 변환.
+  - 해당 요구사항을 먼저 충족 시키는 것 보다, 모든 문자를 소문자로 변환.
 ### Reference
 [java 21 docs: String.replace(char,char)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replace(char,char))
