@@ -13,7 +13,6 @@ public class Solution77 {
     }
 
     public String solution(String myString) {
-        String answer = "";
-        return answer;
+        return myString.toLowerCase();
     }
 }
