@@ -26,3 +26,38 @@
 
 #### 예제 #2
 - `alp`가 "x"이지만, `my_string`에 "x"는 없습니다. 따라서 "lowercase"를 그대로 return 합니다.
+# 회고
+### replace()
+#### replace(CharSequence target, CharSequence replacement)
+- isLatin1()를 통해 최적화된 Latin1 또는 UTF16 방식으로 처리.
+- 길이가 1인 경우 replace(char, char)를 호출하여 단일 문자로 처리.
+```java
+public String solution(String my_string, String alp) {
+    return my_string.replace(alp, alp.toUpperCase());
+}
+
+public String replace(CharSequence target, CharSequence replacement) {
+  String trgtStr = target.toString();
+  String replStr = replacement.toString();
+  //...
+}
+```
+#### replace(char oldChar, char newChar)
+- 문자열의 char 배열(value)을 직접 탐색하여 대체를 수행.
+```java
+public String solution(String my_string, String alp) {
+    char target = alp.charAt(0); 
+    return my_string.replace(target, Character.toUpperCase(target));
+}
+
+public String replace(char oldChar, char newChar) {
+  if (oldChar != newChar) {
+    String ret = isLatin1() ? StringLatin1.replace(value, oldChar, newChar)
+            : StringUTF16.replace(value, oldChar, newChar);
+    if (ret != null) {
+      return ret;
+    }
+  }
+  return this;
+}
+```

@@ -13,7 +13,7 @@ public class Solution80 {
     }
 
     public String solution(String my_string, String alp) {
-        String answer = "";
-        return answer;
+        char target = alp.charAt(0);
+        return my_string.replace(target, Character.toUpperCase(target));
     }
 }
