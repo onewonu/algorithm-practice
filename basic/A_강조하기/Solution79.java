@@ -13,7 +13,17 @@ public class Solution79 {
     }
 
     public String solution(String myString) {
-        String answer = "";
-        return answer;
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < myString.length(); i++) {
+            char charAt = myString.charAt(i);
+            if (charAt == 'a' || charAt == 'A') {
+                builder.append(Character.toUpperCase(charAt));
+            } else {
+                builder.append(Character.toLowerCase(charAt));
+            }
+        }
+
+        return builder.toString();
     }
 }
