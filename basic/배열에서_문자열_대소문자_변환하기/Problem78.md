@@ -37,3 +37,14 @@
 - `strArr[0]`은 **짝수번째 인덱스**의 문자열이므로 소문자로 변환합니다: `"abc"`.
 - `strArr[1]`은 **홀수번째 인덱스**의 문자열이므로 대문자로 변환합니다: `"ABC"`.  
   따라서 `["abc","ABC"]`를 반환합니다.
+# 회고
+### 다른 풀이 방법: Stream API
+```java
+import java.util.stream.IntStream;
+
+public String[] solution(String[] strArr) {
+    return IntStream.range(0, strArr.length)
+            .mapToObj(i -> i % 2 == 1 ? strArr[i].toUpperCase() : strArr[i].toLowerCase())
+            .toArray(String[]::new);
+}
+```
