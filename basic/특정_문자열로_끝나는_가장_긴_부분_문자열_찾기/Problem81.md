@@ -36,3 +36,23 @@
 - 가장 마지막에 있는 `"a"`의 위치까지 잘라내면 `"AAAAaaaa"`가 됩니다.
 - 이 문자열이 `"a"`로 끝나는 가장 긴 부분 문자열입니다.  
   따라서 `"AAAAaaaa"`를 반환합니다.
+# 회고
+### 요구사항 정리
+- 가장 긴 부분 문자열: 주어진 문자열(myString)의 끝에서부터 비교 대상(pat)을 찾아가는 과정.
+- ### 다른 풀이 방법: 루프
+```java
+public String solution(String myString, String pat) {
+    for (int i = myString.length(); i >= 0; i--) {
+        if (myString.substring(0, i).endsWith(pat)) {
+            return myString.substring(0, i);
+        }
+    }
+    return "";
+}
+```
+### 다른 풀이 방법: 정규식
+```java
+public String solution(String myString, String pat) {
+    return myString.replaceAll(".*(?=" + pat + "$)", "") + pat;
+}
+```

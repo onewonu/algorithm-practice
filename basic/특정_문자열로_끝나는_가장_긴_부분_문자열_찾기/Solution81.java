@@ -13,7 +13,7 @@ public class Solution81 {
     }
 
     public String solution(String myString, String pat) {
-        String answer = "";
-        return answer;
+        int endIndex = myString.lastIndexOf(pat) + pat.length();
+        return myString.substring(0, endIndex);
     }
 }
