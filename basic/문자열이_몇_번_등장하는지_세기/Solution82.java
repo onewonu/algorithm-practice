@@ -16,13 +16,15 @@ public class Solution82 {
 
     public int solution(String myString, String pat) {
         int answer = 0;
+        int index = 0;
 
-        for (int i = 0; i < myString.length();) {
-            i = myString.indexOf(pat, i);
-            if (i == -1) break;
+        while (
+                (index = myString.indexOf(pat, index)) != -1
+        ) {
             answer++;
-            i++;
+            index++;
         }
+
         return answer;
     }
 }
