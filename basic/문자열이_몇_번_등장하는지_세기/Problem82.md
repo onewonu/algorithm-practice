@@ -34,3 +34,10 @@
   2. 1~3번 인덱스에서 `"aa"`가 또 한 번 등장.
   3. 2~4번 인덱스에서 `"aa"`가 또 한 번 등장.
 - 총 세 번 등장하므로 `3`을 반환합니다.
+# 회고
+### indexOf(String str, int fromIndex)
+- fromIndex 이후부터 문자열을 탐색.
+- 찾는 문자열이 시작되는 첫 번째 인덱스를 반환.
+- 특정 문자열이 없는 경우 -1을 반환.
+### Reference 
+[java 21 docs: String.indexOf(int, int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#indexOf(int,int))

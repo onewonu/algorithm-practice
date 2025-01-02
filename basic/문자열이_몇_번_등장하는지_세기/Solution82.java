@@ -17,10 +17,11 @@ public class Solution82 {
     public int solution(String myString, String pat) {
         int answer = 0;
 
-        for (int i = 0; i < myString.length(); i++) {
+        for (int i = 0; i < myString.length();) {
             i = myString.indexOf(pat, i);
-            if (i == -1) return answer;
+            if (i == -1) break;
             answer++;
+            i++;
         }
         return answer;
     }
