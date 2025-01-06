@@ -34,3 +34,33 @@
 
 ### 문제 해결
 - 주어진 문자열 배열을 순회하며 각 문자열이 `"ad"`를 포함하지 않을 경우만 새로운 배열에 추가합니다.
+# 회고 
+### Stream API
+```java
+public String[] solution(String[] strArr) {
+    return Arrays.stream(strArr)
+                 .filter(s -> !s.contains("ad"))
+                 .toArray(String[]::new);
+}
+```
+### 배열 덮어 쓰기
+```java
+public String[] solution(String[] strArr) {
+  int index = 0;
+  for (String string : strArr) {
+      if (!string.contains("ad")) {
+          strArr[index++] = string;
+      }
+  }
+  return Arrays.copyOf(strArr, index);
+}
+```
+- 배열 내부에서 조건에 맞는 요소만 “앞으로 덮어쓰기”를 통해 남긴다.
+- 새로운 배열을 생성하지 않아 공간 복잡도가 $O(1)$
+- 반복 종료 후 유효한 요소만 포함된 배열을 반환하기 위해 Arrays.copyOf 사용.
+
+  | 순서 | 현재 요소   | 조건 검사                         | 덮어쓰기                  | 배열 상태                    | index |
+  |----|---------|-------------------------------|-----------------------|--------------------------|-------|
+  | 1  | "and"   | "and".contains("ad") → false  | "and"을 strArr[0]에 저장  | ["and", "notad", "abcd"] | 1     |
+  | 2  | "notad" | "notad".contains("ad") → true | 건너뜀                   | ["and", "notad", "abcd"] | 1     |
+  | 3  | "abcd"  | "abcd".contains("ad") → false | "abcd"을 strArr[1]에 저장 | ["and", "abcd", "abcd"]  | 2     |
