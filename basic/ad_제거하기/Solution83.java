@@ -1,6 +1,8 @@
 package basic.ad_제거하기;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Solution83 {
     public static void main(String[] args) {
@@ -15,7 +17,14 @@ public class Solution83 {
     }
 
     public String[] solution(String[] strArr) {
-        String[] answer = {};
-        return answer;
+        List<String> reslutList = new ArrayList<>();
+
+        for (String string : strArr) {
+            if (!string.contains("ad")) {
+                reslutList.add(string);
+            }
+        }
+
+        return reslutList.toArray(new String[0]);
     }
 }
