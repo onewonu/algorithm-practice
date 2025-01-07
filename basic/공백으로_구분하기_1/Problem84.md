@@ -31,3 +31,6 @@
 #### 예제 2
 - `my_string`은 `"programmers"`로 단어가 하나만 있습니다.
 - 따라서, `["programmers"]`를 return 합니다.
+# 회고
+### Reference
+[java 21 docs: String.split(String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#split(java.lang.String))

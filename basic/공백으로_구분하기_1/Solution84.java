@@ -1,7 +1,6 @@
 package basic.공백으로_구분하기_1;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class Solution84 {
     public static void main(String[] args) {
@@ -16,7 +15,6 @@ public class Solution84 {
     }
 
     public String[] solution(String my_string) {
-        String[] answer = {};
-        return answer;
+        return my_string.split(" ");
     }
 }
