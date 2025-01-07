@@ -32,3 +32,53 @@
 #### 예제 2
 - `my_string`은 `"    programmers  "`로 단어는 `"programmers"` 하나만 있습니다.
 - 따라서, `["programmers"]`를 return 합니다.
+# 회고
+### 다른 풀이 방법: Basic
+```java
+public String[] solution(String my_string) {
+    String[] split = my_string.split(" ");
+    
+    int count = 0;
+    for (String string : split) {
+        if (!string.isBlank()) {
+            count++;
+        }
+    }
+    String[] result = new String[count];
+    
+    int index = 0;
+    for (String string : split) {
+        if (!string.isBlank()) {
+            result[index++] = string;
+        }
+    }
+    return result;
+}
+```
+### Arrays.copyOf
+```java
+public String[] solution(String my_string) {
+    String[] split = my_string.split(" ");
+    
+    String[] result = new String[split.length];
+    int count = 0;
+
+    for (String string : split) {
+        if (!string.isBlank()) {
+            result[count++] = string;
+        }
+    }
+
+    return Arrays.copyOf(result, count);
+}
+```
+### 다른 풀이 방법: Stream API
+```java
+public String[] solution(String my_string) {
+    return Arrays.stream(my_string.split(" "))
+                 .filter(s -> !s.isBlank())
+                 .toArray(String[]::new);
+}
+```
+### Reference 
+[java 21 docs: Arrays.copyOf(T[],int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#copyOf(T[],int))

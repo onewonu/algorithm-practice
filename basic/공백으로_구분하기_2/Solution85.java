@@ -15,7 +15,15 @@ public class Solution85 {
     }
 
     public String[] solution(String my_string) {
-        String[] answer = {};
-        return answer;
+        String[] split = my_string.split(" ");
+        String[] result = new String[split.length];
+        int count = 0;
+        for (String string : split) {
+            if (!string.isBlank()) {
+                result[count++] = string;
+            }
+        }
+
+        return Arrays.copyOf(result, count);
     }
 }
