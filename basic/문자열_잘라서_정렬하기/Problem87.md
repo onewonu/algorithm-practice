@@ -33,3 +33,28 @@
 - `myString`을 `"x"`를 기준으로 자르면 `["d","cc","bbb","aaaa"]`가 됩니다.
 - 이를 사전순으로 정렬하면 `["aaaa","bbb","cc","d"]`가 됩니다.
 - 따라서 `["aaaa","bbb","cc","d"]`를 return 합니다.
+# 회고
+### toArray 메서드의 두 가지 형태
+**Object[] toArray()**
+- 이 방식은 결과를 항상 Object[] 타입의 배열로 반환.
+- 반환된 배열을 String[] 등으로 캐스팅해야 하며, 이는 타입 안정성이 떨어질 수 있다.
+
+**<T> T[] toArray(T[] a)**
+- 이 방식은 지정한 타입의 배열을 반환.
+- 크기가 충분히 큰 배열을 제공하면 그 배열을 재사용하고, 그렇지 않으면 새로운 배열을 생성.
+- 매개변수로 전달된 배열(a)의 크기에 따라 두 가지 방식으로 동작
+  1. 전달된 배열이 컬렉션 크기와 같거나 더 클 경우: 해당 배열에 데이터를 채우고, 반환.
+  2. 전달된 배열이 컬렉션 크기보다 작을 경우: 컬렉션의 크기에 맞는 새로운 배열을 생성하여 데이터를 복사한 후 반환.
+     - new String[0]은 크기가 0인 빈 배열을 생성한다.
+     - 전달된 배열 크기가 작기 때문에 컬렉션의 크기에 맞는 배열을 생성하여 데이터를 채운다.
+### 다른 방법: Stream API
+```java
+import java.util.Arrays;
+
+public String[] solution(String myString) {
+    return Arrays.stream(myString.split("x"))
+                 .filter(s -> !s.isEmpty()) 
+                 .sorted() 
+                 .toArray(String[]::new);
+}
+```
