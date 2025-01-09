@@ -13,7 +13,17 @@ public class Solution89 {
     }
 
     public int solution(String myString, String pat) {
-        int answer = 0;
-        return answer;
+        char[] charArray = myString.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] == 'A') {
+                charArray[i] = 'B';
+            } else if (charArray[i] == 'B') {
+                charArray[i] = 'A';
+            }
+        }
+
+        String changedMyString = String.valueOf(charArray);
+        boolean contains = changedMyString.contains(pat);
+        return contains ? 1 : 0;
     }
 }
