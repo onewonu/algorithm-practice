@@ -31,3 +31,33 @@
 - `"x"`를 기준으로 문자열을 나누면 `["", "abc", "def", "ghi"]`가 됩니다.
 - 각각의 길이로 배열을 만들면 `[0, 3, 3, 3]`입니다.
 - 따라서 `[0, 3, 3, 3]`을 return 합니다.
+# 회고
+### 문자열 끝에 "x"가 있는 경우
+```java
+public int[] solution(String myString) {
+    String[] xes = myString.split("x");
+    int[] answer = new int[xes.length];
+
+    for (int i = 0; i < xes.length; i++) {
+        answer[i] = xes[i].length();
+    }
+
+    return answer;
+}
+```
+- 입력 값 "oxooxoxxox" 에 대해 ["o", "oo", "o", "", "o"]가 반환.
+- 문자열 끝에 "x"가 있는 경우 마지막 빈 문자열이 누락.
+- 뒤쪽의 빈 문자열도 포함하기 위해 **split(regex, -1);**
+### 다른 풀이 방법: Stream API
+```java
+import java.util.Arrays;
+
+public int[] solution(String myString) {
+    return Arrays.stream(myString.split("x", -1))
+            .mapToInt(String::length)
+            .toArray();
+}
+```
+### Reference
+[java 21 docs: split(String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#split(java.lang.String))  
+[java 21 docs: split(String, int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#split(java.lang.String,int))
