@@ -14,7 +14,16 @@ public class Solution88 {
     }
 
     public int solution(String binomial) {
-        int answer = 0;
-        return answer;
+        String[] parts = binomial.split(" ");
+        int a = Integer.parseInt(parts[0]);
+        String op = parts[1];
+        int b = Integer.parseInt(parts[2]);
+
+        return switch (op) {
+            case "+" -> a + b;
+            case "-" -> a - b;
+            case "*" -> a * b;
+            default -> 0;
+        };
     }
 }

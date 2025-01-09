@@ -34,3 +34,81 @@
 #### 예제 #3
 - `binomial`이 `"40000 * 40000"`이므로, 이 식을 계산한 결과는 `40000 × 40000 = 1600000000`입니다.
 - 따라서 `1600000000`을 return 합니다.
+# 회고
+### 다른 풀이 방법: BiFunction
+```java
+ private static Map<String, BiFunction<Integer, Integer, Integer>> getStringBiFunctionMap() {
+    return Map.of(
+            "+", (x, y) -> x + y,
+            "-", (x, y) -> x - y,
+            "*", (x, y) -> x * y
+    );
+}
+
+public int solution(String binomial) {
+    String[] split = binomial.split(" ");
+    int a = Integer.parseInt(split[0]);
+    String op = split[1];
+    int b = Integer.parseInt(split[2]);
+
+    return getStringBiFunctionMap().get(op).apply(a, b);
+}
+```
+>  Java 8에서 도입된 Functional Interface 로, 두 개의 입력값을 받아서 하나의 출력값을 생성하는 함수형 인터페이스. 주로 람다식 또는 메서드 참조와 함께 사용되며, java.util.function 패키지에 포함.
+- 예제 
+```java
+public void test() {
+    BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+    System.out.println(add.apply(3, 5)); // 출력: 8
+
+    BiFunction<String, String, String> concat = String::concat;
+    System.out.println(concat.apply("Hello, ", "World!")); // 출력: Hello, World!
+
+    BiFunction<Integer, Integer, String> compare = (a, b) -> a > b ? "Greater" : "Lesser or Equal";
+    System.out.println(compare.apply(10, 5)); // 출력: Greater
+}
+```
+### 다른 풀이 방법: Enum
+```java
+public enum Operator {
+    PLUS("+") {
+        public int apply(int x, int y) {
+            return x + y;
+        }
+    },
+    MINUS("-") {
+        public int apply(int x, int y) {
+            return x - y;
+        }
+    },
+    MULTIPLY("*") {
+        public int apply(int x, int y) {
+            return x * y;
+        }
+    };
+
+    private final String symbol;
+
+    Operator(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public abstract int apply(int x, int y);
+
+    public static Operator fromSymbol(String symbol) {
+        for (Operator op : values()) {
+            if (op.symbol.equals(symbol)) return op;
+        }
+        throw new IllegalArgumentException("Unsupported operator: " + symbol);
+    }
+}
+
+public int solution(String binomial) {
+    String[] parts = binomial.split(" ");
+    int a = Integer.parseInt(parts[0]);
+    String op = parts[1];
+    int b = Integer.parseInt(parts[2]);
+
+    return Operator.fromSymbol(op).apply(a, b);
+}
+```
