@@ -31,8 +31,25 @@
 #### 예제 #2
 - `"ABAB"`에서 `"A"`와 `"B"`를 서로 바꾸면 `"BABA"`입니다.
 - 여기에는 부분 문자열 `"BABA"`가 없기 때문에 `0`을 return 합니다.
-
----
-
-### 추가 설명
-- 입력 문자열이 주어졌을 때, 변환과 탐색을 한 번의 로직으로 효율적으로 구현할 수 있습니다.
+# 회고
+### 다른 풀이 방법: replace
+```java
+public int solution(String myString, String pat) {
+    String transformed = myString.replace('A', 'X')
+                                 .replace('B', 'A')
+                                 .replace('X', 'B');
+    return transformed.contains(pat) ? 1 : 0;
+}
+```
+**임시 저장 문자: 변환 중 중복 처리를 방지하기 위해.**
+- ex) "ABBAA"
+  1. 'A' → 'B': 결과 = "BBBAA"
+  2. 'B' → 'A': 결과 = "AAAAA"
+- ex) "ABBAA"
+  1. 'A' → 'X': 결과 = "XBBXX"
+  2. 'B' → 'A': 결과 = "XAAXX"
+  3. 'X' → 'B': 결과 = "BAABB"
+### Reference
+[java 21 docs: contains(CharSequence)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#contains(java.lang.CharSequence))
+[java 21 docs: CharSequence](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/CharSequence.html)
+[java 21 docs: replace(char,char)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replace(char,char))
