@@ -16,7 +16,19 @@ public class Solution92 {
     }
 
     public int[] solution(int[] arr) {
-        int[] answer = {};
+        int size = 0;
+        for (int i : arr) {
+            size += i;
+        }
+
+        int[] answer = new int[size];
+        int index = 0;
+        for (int i : arr) {
+            for (int j = 0; j < i; j++) {
+                answer[index++] = i;
+            }
+        }
+
         return answer;
     }
 }

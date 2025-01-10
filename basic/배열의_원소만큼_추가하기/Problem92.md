@@ -56,3 +56,34 @@
 | `1` | `[1]` |
 
 따라서 `[1]`을 return 합니다.
+# 회고
+### 고정 배열 size
+
+### 다른 풀이 방법: Array.fill
+```java
+public int[] solution(int[] arr) {
+    int size = 0;
+    for (int i : arr) {
+        size += i;
+    }
+    
+    int[] answer = new int[size];
+    int index = 0;
+    for (int i : arr) {
+        Arrays.fill(answer, index, index + i, i);
+        index += i;
+    }
+
+    return answer;
+}
+```
+### 다른 풀이 방법: Stream API
+```java
+public int[] solution(int[] arr) {
+    return Arrays.stream(arr)
+                 .flatMap(i -> IntStream.generate(() -> i).limit(i))
+                 .toArray();
+}
+```
+### Reference 
+[java 21 docs: Arrays.fill(int[],int,int,int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#fill(int[],int,int,int))
