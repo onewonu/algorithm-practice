@@ -35,3 +35,20 @@
 | 4 | false   | 3      | `[3, 3, 3, 3, 4, 4, 4, 4]`             |
 
 따라서 `[3, 3, 3, 3, 4, 4, 4, 4]`를 return 합니다.
+# 회고
+### 리스트의 마지막 arr[i]개의 요소 삭제
+- 리스트에서 특정 값(예: 3)이 위치한 마지막 부분을 제거하는 것이 아닌, 리스트의 뒤쪽부터 개수(arr[i])를 기준으로 제거하는 것을 요구
+### ArrayList.remove
+**remove(int index): 인덱스를 지정하여 삭제**
+- 리스트에서 지정된 인덱스의 요소를 삭제.
+- 삭제된 요소 뒤의 모든 요소는 한 칸 앞으로 이동.
+- 인덱스가 리스트의 크기를 벗어나면 IndexOutOfBoundsException 발생.
+
+**remove(Object o): 객체의 값을 기준으로 삭제**
+- 리스트에서 지정된 객체와 동일한 첫 번째 요소를 삭제.
+- 객체의 equals() 메서드로 비교하여 동일한 값을 찾는다.
+- 삭제된 요소 뒤의 모든 요소는 한 칸 앞으로 이동.
+- 삭제 성공 시 true, 실패 시 false.
+# Reference
+[java 21 docs: ArrayList.remove(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#remove(int))
+[java 21 docs: ArrayList.remove(Object)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html#remove(java.lang.Object))

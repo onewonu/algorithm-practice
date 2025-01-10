@@ -1,6 +1,8 @@
 package basic.빈_배열_추가_삭제하기;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Solution93 {
     public static void main(String[] args) {
@@ -14,7 +16,24 @@ public class Solution93 {
     }
 
     public int[] solution(int[] arr, boolean[] flag) {
-        int[] answer = {};
-        return answer;
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            if (flag[i]) {
+                for (int j = 0; j < arr[i] * 2; j++) {
+                    list.add(arr[i]);
+                }
+            } else {
+                for (int j = 0; j < arr[i]; j++) {
+                    list.remove(list.size() - 1);
+                }
+            }
+        }
+
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
     }
 }
