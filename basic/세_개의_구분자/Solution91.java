@@ -1,6 +1,8 @@
 package basic.세_개의_구분자;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Solution91 {
     public static void main(String[] args) {
@@ -16,7 +18,28 @@ public class Solution91 {
     }
 
     public String[] solution(String myStr) {
-        String[] answer = {};
-        return answer;
+        List<String> list = new ArrayList<>();
+        StringBuilder builder = new StringBuilder();
+
+        for (char c : myStr.toCharArray()) {
+            if ("abc".indexOf(c) != -1) {
+                if (builder.length() > 0) {
+                    list.add(builder.toString());
+                    builder.setLength(0);
+                }
+            } else {
+                builder.append(c);
+            }
+        }
+
+        if (builder.length() > 0) {
+            list.add(builder.toString());
+        }
+
+        if (list.isEmpty()) {
+            return new String[]{"EMPTY"};
+        } else {
+            return list.toArray(new String[0]);
+        }
     }
 }
