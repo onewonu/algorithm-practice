@@ -18,28 +18,19 @@ public class Solution91 {
     }
 
     public String[] solution(String myStr) {
-        List<String> list = new ArrayList<>();
-        StringBuilder builder = new StringBuilder();
+        String[] split = myStr.split("[abc]+");
+        List<String> resultList = new ArrayList<>();
 
-        for (char c : myStr.toCharArray()) {
-            if ("abc".indexOf(c) != -1) {
-                if (builder.length() > 0) {
-                    list.add(builder.toString());
-                    builder.setLength(0);
-                }
-            } else {
-                builder.append(c);
+        for (String part : split) {
+            if (!part.isEmpty()) {
+                resultList.add(part);
             }
         }
 
-        if (builder.length() > 0) {
-            list.add(builder.toString());
-        }
-
-        if (list.isEmpty()) {
+        if (resultList.isEmpty()) {
             return new String[]{"EMPTY"};
         } else {
-            return list.toArray(new String[0]);
+            return resultList.toArray(new String[0]);
         }
     }
 }
