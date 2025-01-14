@@ -3,7 +3,6 @@ package basic.배열_만들기_6;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.Stack;
 
 public class Solution94 {
     public static void main(String[] args) {
