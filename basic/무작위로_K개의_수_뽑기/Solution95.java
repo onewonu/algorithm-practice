@@ -1,6 +1,8 @@
 package basic.무작위로_K개의_수_뽑기;
 
 import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Solution95 {
     public static void main(String[] args) {
@@ -15,7 +17,26 @@ public class Solution95 {
     }
 
     public int[] solution(int[] arr, int k) {
-        int[] answer = {};
+        Set<Integer> set = new LinkedHashSet<>();
+
+        for (int num : arr) {
+            set.add(num);
+            if (set.size() == k) {
+                break;
+            }
+        }
+
+        int[] answer = new int[k];
+        int index = 0;
+
+        for (int num : set) {
+            answer[index++] = num;
+        }
+
+        while (index < k) {
+            answer[index++] = -1;
+        }
+
         return answer;
     }
 }

@@ -39,3 +39,20 @@
 #### 예제 #2
 - 서로 다른 수의 개수가 2개 뿐이므로 서로 다른 수들을 앞에서부터 차례대로 저장한 `[0, 1]`에서  
   이후 2개의 인덱스를 `-1`로 채워넣은 `[0, 1, -1, -1]`을 return 합니다.
+# 회고
+### LinkedHashSet
+- 특징  
+  - Java 에서 제공하는 Set Interface 의 구현체로, 중복 없는 원소를 유지하면서 삽입 순서를 보장한다
+  - 중복 여부 판단은 hashCode, equals 메서드로 판단
+  - 내부적으로 Linked List 와 Hash Table 을 조합하여 구현
+  - 추가, 삭제, 포함 여부 확인: 평균적으로 $O(1)$
+  - null 허용
+- 주요 메서드
+  - add(E e): 요소를 추가. 이미 존재하면 추가하지 않음
+  - remove(Object o): 특정 요소 제거
+  - contains(Object o): 특정 요소가 존재하는지 확인
+  - clear(): 모든 요소 제거
+  - isEmpty(): 비어 있는지 확인
+  - iterator(): 순회 가능한 Iterator 반환
+### Reference
+[java 21 docs: LinkedHashSet](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedHashSet.html)
