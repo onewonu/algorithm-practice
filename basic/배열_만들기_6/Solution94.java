@@ -1,6 +1,8 @@
 package basic.배열_만들기_6;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.Stack;
 
 public class Solution94 {
@@ -17,18 +19,18 @@ public class Solution94 {
     }
 
     public int[] solution(int[] arr) {
-        Stack<Integer> stk = new Stack<>();
+        Deque<Integer> stk = new ArrayDeque<>();
 
-        for (int element : arr) {
-            if (stk.empty() || element != stk.peek()) {
-                stk.push(element);
+        for (int num : arr) {
+            if (stk.isEmpty() || num != stk.peekLast()) {
+                stk.addLast(num);
             } else {
-                stk.pop();
+                stk.removeLast();
             }
         }
 
-        if (stk.empty()) {
-            return new int[] {-1};
+        if (stk.isEmpty()) {
+            return new int[]{-1};
         }
 
         return stk.stream().mapToInt(Integer::valueOf).toArray();
