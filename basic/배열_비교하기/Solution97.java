@@ -22,25 +22,22 @@ public class Solution97 {
             } else {
                 return -1;
             }
-        } else {
-            int sum1 = 0;
-            int sum2 = 0;
+        }
 
-            for (int i : arr1) {
-                sum1 += i;
-            }
-            for (int i : arr2) {
-                sum2 += i;
-            }
-            if (sum1 != sum2) {
-                if (sum1 > sum2) {
-                    return 1;
-                } else {
-                    return -1;
-                }
+        int sum1 = 0, sum2 = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            sum1 += arr1[i];
+            sum2 += arr2[i];
+        }
+
+        if (sum1 != sum2) {
+            if (sum1 > sum2) {
+                return 1;
             } else {
-                return 0;
+                return -1;
             }
         }
+
+        return 0;
     }
 }
