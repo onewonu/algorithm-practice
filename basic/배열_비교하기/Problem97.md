@@ -50,3 +50,19 @@
 #### 예제 #3
 - `arr1`과 `arr2`의 길이는 5로 같고, 각 배열의 모든 원소의 합 또한 $15$로 같습니다.  
   따라서 `arr1`과 `arr2`가 같으므로 `0`을 return 합니다.
+# 회고
+### 다른 풀이 방법: Stream API
+```java
+import java.util.Arrays;
+
+public int solution(int[] arr1, int[] arr2) {
+    if (arr1.length != arr2.length) {
+        return arr1.length > arr2.length ? 1 : -1;
+    }
+
+    int sum1 = Arrays.stream(arr1).sum();
+    int sum2 = Arrays.stream(arr2).sum();
+
+    return Integer.compare(sum1, sum2);
+}
+```
