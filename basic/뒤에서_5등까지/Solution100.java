@@ -1,5 +1,6 @@
 package basic.뒤에서_5등까지;
 
+
 import java.util.Arrays;
 
 public class Solution100 {
@@ -14,7 +15,7 @@ public class Solution100 {
     }
 
     public int[] solution(int[] num_list) {
-        int[] answer = {};
-        return answer;
+        Arrays.sort(num_list);
+        return Arrays.copyOfRange(num_list, 0, 5);
     }
 }
