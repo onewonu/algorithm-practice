@@ -15,18 +15,11 @@ public class Solution99 {
     }
 
     public int[] solution(int[] arr, int n) {
-        if (arr.length % 2 == 0) {
-            for (int i = 1; i < arr.length; i += 2) {
-                System.out.println("i = " + i);
-                arr[i] += n;
-            }
-        } else {
-            for (int i = 0; i < arr.length; i += 2) {
-                System.out.println("i = " + i);
-                arr[i] += n;
-            }
+        int startIndex = 0;
+        if (arr.length % 2 == 0) startIndex = 1;
+        for (int i = startIndex; i < arr.length; i += 2) {
+            arr[i] += n;
         }
-
         return arr;
     }
 }
