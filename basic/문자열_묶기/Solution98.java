@@ -1,6 +1,8 @@
 package basic.문자열_묶기;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution98 {
     public static void main(String[] args) {
@@ -14,23 +16,20 @@ public class Solution98 {
     }
 
     public int solution(String[] strArr) {
-        HashMap<Integer, List<String>> hashMap = new HashMap<>();
+        Map<Integer, Integer> lengthCount = new HashMap<>();
+
         for (String str : strArr) {
             int length = str.length();
-            hashMap.putIfAbsent(length, new ArrayList<>());
-            hashMap.get(length).add(str);
+            lengthCount.put(
+                    length
+                    , lengthCount.getOrDefault(length, 0) + 1
+            );
         }
-        System.out.println("hashMap = " + hashMap);
 
         int maxSize = 0;
-        for (Map.Entry<Integer, List<String>> entry : hashMap.entrySet()) {
-            int currentSize = entry.getValue().size();
-
-            if (currentSize > maxSize) {
-                maxSize = currentSize;
-            }
+        for (int count : lengthCount.values()) {
+            maxSize = Math.max(maxSize, count);
         }
-
         return maxSize;
     }
 }
