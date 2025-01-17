@@ -112,7 +112,7 @@ public int solution(String[] strArr) {
 }
 ```
 ### Reference
-[java 21 docs: HashMap](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html)
-[java 21 docs: HashMap.getOrDefault(Object, V)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#getOrDefault(java.lang.Object,V))
-[java 21 docs: HashMap.putIfAbsent(K,V)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#putIfAbsent(K,V))
-[java 21 docs: Collectors.groupingBy(Function, Collector)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html#groupingBy(java.util.function.Function,java.util.stream.Collector))
+[java 21 docs: HashMap](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html)  
+[java 21 docs: HashMap.getOrDefault(Object, V)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#getOrDefault(java.lang.Object,V))  
+[java 21 docs: HashMap.putIfAbsent(K,V)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#putIfAbsent(K,V))  
+[java 21 docs: Collectors.groupingBy(Function, Collector)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html#groupingBy(java.util.function.Function,java.util.stream.Collector))  
