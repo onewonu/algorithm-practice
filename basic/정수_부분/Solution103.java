@@ -13,7 +13,6 @@ public class Solution103 {
     }
 
     public int solution(double flo) {
-        int answer = 0;
-        return answer;
+        return (int) flo;
     }
 }
