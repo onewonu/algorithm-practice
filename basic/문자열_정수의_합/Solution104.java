@@ -14,6 +14,12 @@ public class Solution104 {
 
     public int solution(String num_str) {
         int answer = 0;
+        int parseInt = Integer.parseInt(num_str);
+        while (parseInt > 0) {
+            answer += parseInt % 10;
+            parseInt = parseInt / 10;
+        }
+
         return answer;
     }
 }
