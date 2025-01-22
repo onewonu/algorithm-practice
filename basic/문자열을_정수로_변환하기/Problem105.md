@@ -27,3 +27,18 @@
 
 #### 예제 #2
 - `"8542"`를 정수로 바꾸면 8542입니다.
+# 회고
+### 다른 풀이 방법: charAt 과 (ASCII '0')
+```java
+public int solution(String n_str) {
+    int result = 0;
+    
+    for (int i = 0; i < n_str.length(); i++) {
+        result = result * 10 + (n_str.charAt(i) - '0');
+    }
+    
+    return result;
+}
+```
+### Reference 
+[문자열 정수의 합](../문자열_정수의_합/Problem104.md)
