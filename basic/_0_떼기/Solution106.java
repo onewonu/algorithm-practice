@@ -13,16 +13,11 @@ public class Solution106 {
     }
 
     public String solution(String n_str) {
-        StringBuilder answer = new StringBuilder();
-
         for (int i = 0; i < n_str.length(); i++) {
             if (n_str.charAt(i) != '0') {
-                answer.append(n_str.charAt(i));
-            } else if (!answer.isEmpty()) {
-                answer.append(n_str.charAt(i));
+                return n_str.substring(i);
             }
         }
-
-        return answer.toString();
+        return "";
     }
 }

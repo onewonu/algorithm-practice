@@ -27,3 +27,20 @@
 
 #### 예제 #2
 - `"854020"`은 가장 왼쪽에 0이 없으므로 `"854020"`을 return 합니다.
+# 회고
+### 다른 풀이 방법: 정규식
+```java
+public String solution(String n_str) {
+    return n_str.replaceFirst("^0+", "");
+}
+```
+- ^ : 문자열의 시작
+- 0+ : 하나 이상의 연속된 '0'
+### 다른 풀이 방법: (숫자) 형변환 과정에서 앞의 0 제거되는 특성 활용
+```java
+public String solution(String n_str) {
+    return String.valueOf(Integer.parseInt(n_str));
+}
+```
+### Reference
+[java 21 docs: String.replaceFirst(String)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#replaceFirst(java.lang.String,java.lang.String))
