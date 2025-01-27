@@ -55,5 +55,37 @@
 - 최종 자리 올림(carry) 처리 추가
 - 문자열 길이 맞추기 로직을 분리 
 - 반복문 내부 가독성을 높임
+### 다른 풀이 방법: BigInteger
+```java
+import java.math.BigInteger;
+
+public String solution(String a, String b) {
+    BigInteger numA = new BigInteger(a);
+    BigInteger numB = new BigInteger(b);
+
+    return numA.add(numB).toString();
+}
+```
+### 다른 풀이 방법: 두개의 포인터
+```java
+public String solution(String a, String b) {
+    StringBuilder result = new StringBuilder();
+    int carry = 0;
+
+    int i = a.length() - 1;
+    int j = b.length() - 1;
+
+    while (i >= 0 || j >= 0 || carry > 0) {
+        int digitA = (i >= 0) ? a.charAt(i--) - '0' : 0;
+        int digitB = (j >= 0) ? b.charAt(j--) - '0' : 0;
+
+        int sum = digitA + digitB + carry;
+        carry = sum / 10;
+        result.append(sum % 10);
+    }
+
+    return result.reverse().toString();
+}
+```
 ### Reference 
 [java 21 docs: String.repeat(int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#repeat(int))
