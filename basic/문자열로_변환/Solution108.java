@@ -13,7 +13,6 @@ public class Solution108 {
     }
 
     public String solution(int n) {
-        String answer = "";
-        return answer;
+        return Integer.toString(n);
     }
 }
