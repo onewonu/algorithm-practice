@@ -31,3 +31,23 @@
 
 #### 예제 #2
 - 리스트 `[15, 98, 23, 2, 15]` 안에 `20`이 없으므로 `0`을 return 합니다.
+# 회고
+### 다른 풀이 방법: 이진 탐색 
+```java
+import java.util.Arrays;
+
+public int solution(int[] num_list, int n) {
+    Arrays.sort(num_list);
+    return Arrays.binarySearch(num_list, n) >= 0 ? 1 : 0;
+}
+```
+### 다른 풀이 방법: Stream API
+```java
+import java.util.Arrays;
+
+public int solution(int[] num_list, int n) {
+    return Arrays.stream(num_list).anyMatch(num -> num == n) ? 1 : 0;
+}
+```
+### Reference
+[java 21 docs: Arrays.binarySearch(int[],int)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Arrays.html#binarySearch(int[],int))

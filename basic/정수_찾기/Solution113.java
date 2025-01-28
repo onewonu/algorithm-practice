@@ -15,7 +15,12 @@ public class Solution113 {
     }
 
     public int solution(int[] num_list, int n) {
-        int answer = 0;
-        return answer;
+        for (int num : num_list) {
+            if (num == n) {
+                return 1;
+            }
+        }
+
+        return 0;
     }
 }
