@@ -21,20 +21,15 @@ public class Solution109 {
             deleteSet.add(num);
         }
 
-        int count = 0;
+        int[] result = new int[arr.length];
+        int index = 0;
+
         for (int num : arr) {
-            if (deleteSet.contains(num)) {
-                count++;
+            if (!deleteSet.contains(num)) {
+                result[index++] = num;
             }
         }
 
-        int[] answer = new int[arr.length - count];
-        int index = 0;
-        for (int num : arr) {
-            if (!deleteSet.contains(num)) {
-                answer[index++] = num;
-            }
-        }
-        return answer;
+        return Arrays.copyOf(result, index);
     }
 }

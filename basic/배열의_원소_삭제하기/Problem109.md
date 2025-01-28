@@ -33,3 +33,24 @@
 
 #### 예제 #2
 - 예제 2번의 `arr`의 원소 중 `delete_list`에 있는 원소는 없습니다. 따라서 `arr` 그대로인 `[110, 66, 439, 785, 1]`을 return 합니다.
+# 회고
+### 다른 풀이 방법: 이진 탐색
+```java
+public int[] solution(int[] arr, int[] delete_list) {
+    int[] result = new int[arr.length];
+    int index = 0;
+
+    Arrays.sort(delete_list);
+
+    for (int num : arr) {
+        if (Arrays.binarySearch(delete_list, num) < 0) {
+            result[index++] = num;
+        }
+    }
+
+    return Arrays.copyOf(result, index);
+}
+```
+***이진 탐색은 정렬된 배열에서 값을 찾는 효율적인 방법, 삭제 리스트를 먼저 정렬한 후, 각 값을 이진 탐색으로 확인**
+- Arrays.binarySearch
+  - 값이 배열에 없을 경우, 그 값이 정렬된 배열에서 삽입될 위치를 음수 값으로 반환
