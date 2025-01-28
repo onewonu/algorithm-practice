@@ -1,6 +1,7 @@
 package basic.배열의_원소_삭제하기;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class Solution109 {
     public static void main(String[] args) {
@@ -15,7 +16,25 @@ public class Solution109 {
     }
 
     public int[] solution(int[] arr, int[] delete_list) {
-        int[] answer = {};
+        HashSet<Integer> deleteSet = new HashSet<>();
+        for (int num : delete_list) {
+            deleteSet.add(num);
+        }
+
+        int count = 0;
+        for (int num : arr) {
+            if (deleteSet.contains(num)) {
+                count++;
+            }
+        }
+
+        int[] answer = new int[arr.length - count];
+        int index = 0;
+        for (int num : arr) {
+            if (!deleteSet.contains(num)) {
+                answer[index++] = num;
+            }
+        }
         return answer;
     }
 }
