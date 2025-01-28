@@ -15,7 +15,14 @@ public class Solution112 {
     }
 
     public String solution(String[] str_list, String ex) {
-        String answer = "";
-        return answer;
+        StringBuilder result = new StringBuilder();
+
+        for (String string : str_list) {
+            if (!string.contains(ex)) {
+                result.append(string);
+            }
+        }
+
+        return result.toString();
     }
 }

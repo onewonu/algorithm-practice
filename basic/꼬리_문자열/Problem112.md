@@ -36,3 +36,12 @@
 
 #### 예제 #2
 - 문자열 리스트 `["abc", "bbc", "cbc"]`의 모든 문자열이 `"c"`를 포함하므로 빈 문자열을 return 합니다.
+# 회고
+### 다른 풀이 방법: Stream API 
+```java
+public String solution(String[] str_list, String ex) {
+    return Arrays.stream(str_list)
+                 .filter(string -> !string.contains(ex))
+                 .collect(Collectors.joining());
+}
+```
