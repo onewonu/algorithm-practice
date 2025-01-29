@@ -15,7 +15,16 @@ public class Solution118 {
     }
 
     public int[] solution(int[] arr, int k) {
-        int[] answer = {};
-        return answer;
+        boolean isOdd = k % 2 == 1;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (isOdd) {
+                arr[i] = arr[i] * k;
+            } else {
+                arr[i] = arr[i] + k;
+            }
+        }
+
+        return arr;
     }
 }
