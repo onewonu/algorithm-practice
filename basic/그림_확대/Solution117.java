@@ -21,7 +21,21 @@ public class Solution117 {
     }
 
     public String[] solution(String[] picture, int k) {
-        String[] answer = {};
+        String[] answer = new String[picture.length * k];
+
+        for (int i = 0; i < picture.length; i++) {
+            StringBuilder expandedRow = new StringBuilder();
+
+            for (char c : picture[i].toCharArray()) {
+                expandedRow.append(String.valueOf(c).repeat(k));
+            }
+
+            String row = expandedRow.toString();
+            for (int j = 0; j < k; j++) {
+                answer[i * k + j] = row;
+            }
+        }
+
         return answer;
     }
 }
