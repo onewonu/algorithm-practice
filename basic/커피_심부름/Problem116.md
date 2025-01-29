@@ -1,4 +1,4 @@
-### 커피 심부름
+## 커피 심부름
 
 ---
 
@@ -75,3 +75,25 @@
     - **차가운 아메리카노** × 3 → 4,500 × 3 = 13,500원
 
 ✔ 반환값: **`13500`**
+# 회고
+### 다른 풀이 방법: HashMap
+```java
+import java.util.HashMap;
+
+public int solution(String[] order) {
+    HashMap<String, Integer> menuPrices = new HashMap<>();
+    menuPrices.put("americano", 4500);
+    menuPrices.put("cafelatte", 5000);
+    
+    int totalPrice = 0;
+    for (String menu : order) {
+        if (menu.startsWith("americano") || menu.equals("anything")) {
+            totalPrice += menuPrices.get("americano");
+        } else {
+            totalPrice += menuPrices.get("cafelatte");
+        }
+    }
+
+    return totalPrice;
+}
+```
