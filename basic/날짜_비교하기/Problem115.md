@@ -37,3 +37,34 @@
 #### 예제 #2
 - `date1 = [1024, 10, 24]`, `date2 = [1024, 10, 24]`
 - 두 날짜가 동일하므로 `0`을 반환.
+# 회고
+### 다른 풀이 방법: 명시적 조건
+```java
+public int solution(int[] date1, int[] date2) {
+    if (date1[0] < date2[0]) {
+        return 1;
+    } else if (date1[0] > date2[0]) {
+        return 0;
+    } else if (date1[1] < date2[1]) {
+        return 1;
+    } else if (date1[1] > date2[1]) {
+        return 0;
+    } else if (date1[2] < date2[2]) {
+        return 1;
+    } else if (date1[2] > date2[2]) {
+        return 0;
+    }
+    
+    return 0;
+}
+```
+### 다른 풀이 방법: LocalDate
+```java
+import java.time.LocalDate;
+
+public int solution(int[] date1, int[] date2) {
+    LocalDate d1 = LocalDate.of(date1[0], date1[1], date1[2]);
+    LocalDate d2 = LocalDate.of(date2[0], date2[1], date2[2]);
+    return d1.isBefore(d2) ? 1 : 0;
+}
+```
