@@ -54,3 +54,19 @@
   |2 - 4| = 2
   ]$
 - 결과: `2`
+# 회고
+### 다른 풀이 방법: oddCount (a와 b가 홀수인지 여부를 한 번의 연산으로 처리)
+```java
+public int solution(int a, int b) {
+    int oddCount = (a % 2) + (b % 2);
+    return (oddCount == 2) ? (a * a + b * b) :
+           (oddCount == 1) ? (2 * (a + b)) :
+           Math.abs(a - b);
+}
+```
+
+| a | b | a % 2 | b % 2 | oddCount | 
+|---|---|-------|-------|----------|
+| 3 | 5 | 1     | 1     | 2        |
+| 6 | 1 | 0     | 1     | 1        |
+| 2 | 4 | 0     | 0     | 0        |
