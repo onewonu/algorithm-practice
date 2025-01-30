@@ -50,6 +50,7 @@
 | **4** | 13 | 12 | 11 | 10 | 9 |
 
 - 따라서 `[[1, 2, 3, 4, 5], [16, 17, 18, 19, 6], [15, 24, 25, 20, 7], [14, 23, 22, 21, 8], [13, 12, 11, 10, 9]]`을 return 합니다.
+# 회고
 ### 문제 설명
 - 시계 방향 나선형: 오른쪽 -> 아래 -> 왼쪽 -> 위
 > n = 4
@@ -87,3 +88,60 @@
 11  16  15  6
 10  9   8   7
 ```
+### 다른 풀이 방법: 방향을 배열로 관리
+```java
+public int[][] solution(int n) {
+    int[][] matrix = new int[n][n];
+    int num = 1;
+    
+    int[] row = {0, 1, 0, -1};
+    int[] column = {1, 0, -1, 0};
+
+    int direction = 0;
+
+    int currentRow = 0;
+    int currentColumn = 0;
+
+    while (num <= n * n) {
+        matrix[currentRow][currentColumn] = num++;
+        
+        int nextRow = currentRow + row[direction];
+        int nextColumn = currentColumn + column[direction];
+        
+        if (
+                nextRow < 0
+                        ||
+                        nextRow >= n
+                        ||
+                        nextColumn < 0
+                        ||
+                        nextColumn >= n
+                        ||
+                        matrix[nextRow][nextColumn] != 0
+        ) {
+            direction = (direction + 1) % 4;
+            nextRow = currentRow + row[direction];
+            nextColumn = currentColumn + column[direction];
+        }
+
+        currentRow = nextRow;
+        currentColumn = nextColumn;
+    }
+
+    return matrix;
+}
+```
+1. 이동 방향을 row[], column[] 배열로 관리
+2. 이동 전 미리 nextRow, nextColumn 을 계산하여 경계를 초과하는지 확인
+3. 경계를 초과하거나 이미 값이 있는 경우 방향을 변경
+4. 위 과정을 반복하면서 n × n 배열을 나선형으로 채움
+#### 배열의 방향
+- 현재 방향(direction)을 기준으로 row[direction]와 column[direction] 값을 더해 이동
+- 방향 변경이 필요하면 (current + 1) % 4;로 방향을 전환
+
+| 방향      | current 값 | row[direction] (행 이동) | column[direction] (열 이동) |
+|---------|-----------|-----------------------|--------------------------|
+| 오른쪽 (→) | 0         | 0 (변화 없음)             | +1 (오른쪽 이동)              |
+| 아래 (↓)  | 1         | +1 (아래 이동)            | 0 (변화 없음)                |
+| 왼쪽 (←)  | 2         | 0 (변화 없음)             | -1 (왼쪽 이동)               |
+| 위 (↑)   | 3         | -1 (위로 이동)            | 0 (변화 없음)                |
