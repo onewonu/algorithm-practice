@@ -13,7 +13,13 @@ public class Solution119 {
     }
 
     public String solution(String myString) {
-        String answer = "";
-        return answer;
+        char[] chars = myString.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] < 'l') {
+                chars[i] = 'l';
+            }
+        }
+
+        return new String(chars);
     }
 }

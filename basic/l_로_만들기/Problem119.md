@@ -34,3 +34,10 @@
 - 인덱스 **0, 1, 6, 7**의 문자 `"j","j","k","k"`는 **"l"보다 앞서는 문자**이므로 `"l"`로 변경됩니다.
 - 그 외의 문자는 **"l"보다 앞서지 않는 문자**이므로 유지됩니다.
 - 따라서 `"llnnllllmm"`을 return 합니다.
+# 회고
+### 다른 풀이 방법: replaceAll
+```java
+public String solution(String myString) {
+    return myString.replaceAll("[a-k]", "l");
+}
+```
