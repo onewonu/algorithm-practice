@@ -15,7 +15,36 @@ public class Solution121 {
     }
 
     public int[][] solution(int n) {
-        int[][] answer = {};
+        int[][] answer = new int[n][n];
+        int num = 1;
+
+        int top = 0;
+        int bottom = n - 1;
+        int left = 0;
+        int right = n - 1;
+
+        while (num <= n * n) {
+            for (int column = left; column <= right; column++) {
+                answer[top][column] = num++;
+            }
+            top++;
+
+            for (int row = top; row <= bottom; row++) {
+                answer[row][right] = num++;
+            }
+            right--;
+
+            for (int column = right; column >= left; column--) {
+                answer[bottom][column] = num++;
+            }
+            bottom--;
+
+            for (int row = bottom; row >= top; row--) {
+                answer[row][left] = num++;
+            }
+            left++;
+        }
+
         return answer;
     }
 }
