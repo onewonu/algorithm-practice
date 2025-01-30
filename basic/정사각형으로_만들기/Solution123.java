@@ -16,7 +16,15 @@ public class Solution123 {
     }
 
     public int[][] solution(int[][] arr) {
-        int[][] answer = {};
-        return answer;
+        int numRows = arr.length;
+        int numCols = arr[0].length;
+        int maxSize = Math.max(numRows, numCols);
+        int[][] result = new int[maxSize][maxSize];
+
+        for (int i = 0; i < numRows; i++) {
+            System.arraycopy(arr[i], 0, result[i], 0, numCols);
+        }
+
+        return result;
     }
 }

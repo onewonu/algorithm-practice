@@ -59,3 +59,13 @@
   [[1, 2],
  [3, 4]]
   ```
+# 회고
+### 정사각형(n × n) 배열로 변환 
+- 행과 열중 더 큰값을 사용해 초기화
+### System.arraycopy
+**arraycopy(Object src, int srcPos, Object dest, int destPos, int length)**
+- src: 소스 배열
+- srcPos: 소스 배열의 시작 위치
+- dest: 대상 배열
+- destPos: 목적지 데이터의 시작 위치
+- length: 복사할 배열 요소의 개수
