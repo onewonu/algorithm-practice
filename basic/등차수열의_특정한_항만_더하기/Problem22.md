@@ -39,6 +39,10 @@
 - 따라서 4항만 true이므로 10을 return 합니다.
 # 회고
 ### 등차수열에서 n번째 항을 구하는 공식 
+$$
+\text{Nth Term} = \text{First Term} + (n - 1) \times \text{Common Difference}
+$$
+
 >$
 n= a + (n - 1)d
 $
