@@ -141,10 +141,116 @@
 - String.toCharArray()
 - ASCII
 ***
-[📁 문자열_여러_번_뒤집기](basic/문자열_여러_번_뒤집기)
+[📁 문자열_여러_번_뒤집기](basic/문자열_여러_번_뒤집기) ❗️
+- Temporary Variable Swap
 - String.toCharArray()
 - StringBuilder.substring(int,int)
 - StringBuilder.reverse() 
 - StringBuilder.replace(int,int,java.lang.String)
-</details>
+***
+[📁 배열_만들기_5](basic/배열_만들기_5)
+- ArrayList
+- String.substring(int,int)
+- Integer.parseInt(java.lang.String)
+- Stream.mapToInt(java.util.function.ToIntFunction)
+***
+[📁 부분_문자열_이어_붙여_문자열_만들기](basic/부분_문자열_이어_붙여_문자열_만들기)
+- StringBuilder
+- String.substring(int,int) 
+***
+[📁 문자열_뒤의_n글자](basic/문자열_뒤의_n글자)
+- String.substring(int)
+***
+[📁 접미사_배열](basic/접미사_배열)
+- String.substring(int)
+- Arrays.html#sort(java.lang.Object[] a)
+***
+[📁 접미사_인지_확인하기](basic/접미사_인지_확인하기)
+- String.endsWith(java.lang.String)
+***
+[📁 문자열의_앞의_n글자](basic/문자열의_앞의_n글자)
+- String.substring(int,int) 
+***
+[📁 접두사인지_확인하기](basic/접두사인지_확인하기)
+- String.startsWith(java.lang.String)
+***
+[📁 접두사인지_확인하기](basic/접두사인지_확인하기)
+- String.substring(int,int)
+***
+[📁 문자열_뒤집기](basic/문자열_뒤집기)
+- String.substring(int,int)
+- StringBuilder.reverse()
+***
+[📁 세로_읽기](basic/세로_읽기) ❗️
+- StringBuilder
+- String.charAt(int)
+***
+[📁 qr_code](basic/qr_code) ❗️
+- StringBuilder
+- String.charAt(int)
+***
+[📁 문자_개수_세기](basic/문자_개수_세기) ❗️
+- ASCII
+- Character.isUpperCase(char)
+- Character.isLowerCase(char)
+***
+[📁 문자_개수_세기](basic/배열_만들기_1)
+- Multiple
+***
+[📁 글자_지우기](basic/글자_지우기)
+- Set
+- HashSet
+- LinkedHashSet
+- HashSet.contains(java.lang.Object)
+- String.charAt(int)
+***
+[📁 카운트_다운](basic/카운트_다운)
+- IntStream.rangeClosed(int,int)
+***
+[📁 가까운_1_찾기](basic/가까운_1_찾기)
+***
+[📁 리스트_자르기](basic/리스트_자르기) ❗️
+- IntStream.rangeClosed(int,int)
+***
+[📁 첫_번쨰로_나오는_음수](basic/첫_번쨰로_나오는_음수)️
+***
+[📁 배열_만들기_3](basic/배열_만들기_3)️
+- System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)
+***
+[📁 _2의_영역](basic/_2의_영역)️
+- System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)
+***
+[📁 배열_조각하기](basic/배열_조각하기)️
+- Arrays.copyOfRange(int[],int,int)
+***
+[📁 n_번쨰_요소_부터](basic/n_번쨰_요소_부터)️
+- Arrays.copyOfRange(int[],int,int)
+***
+[📁 순서_바꾸기](basic/순서_바꾸기)️
+- System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)
+***
+[📁 왼쪽_오른쪽](basic/왼쪽_오른쪽)️
+- Arrays.copyOfRange(T[],int,int)
+***
+[📁 n_번째_원소까지](basic/n_번째_원소까지)️
+- Arrays.copyOfRange(int[],int,int)
+***
+[📁 n개_간격의_원소들](basic/n개_간격의_원소들)️ ❗️
+- Integer Division with Ceiling
+***
+[📁 홀수_vs_짝수](basic/홀수_vs_짝수)️
+- Math.max(int,int)
+***
+[📁 _5명씩](basic/_5명씩)️
+- Integer Division with Ceiling
+- Block Indexing ,Integer Division Grouping
+***
+[📁 할_일_목록](basic/할_일_목록)️
+- IntStream.range(int,int)
+- IntStream.filter(java.util.function.IntPredicate)
+- IntStream.mapToObj(java.util.function.IntFunction) 
+***
+[📁 n_보다_커질_때까지_더하기](basic/n_보다_커질_때까지_더하기)
+***
 
+</details>
