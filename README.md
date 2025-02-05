@@ -394,5 +394,13 @@
 - Arrays.sort(int[])
 - Arrays.copyOfRange(int[],int,int)
 ***
+[📁 뒤에서_5등_위로](basic/뒤에서_5등_위로)
+- Arrays.copyOfRange(int[],int,int)
+- PriorityQueue
+- AbstractCollection.isEmpty()
+- Selection Sort
+- Stream.sorted()
+- IntStream.skip(long)
+***
 
 </details>
