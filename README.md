@@ -252,7 +252,7 @@
 ***
 [📁 n_보다_커질_때까지_더하기](basic/n_보다_커질_때까지_더하기)
 ***
-[📁 수열과_구간_쿼리_1](basic/수열과_구간_쿼리_1)
+[📁 수열과_구간_쿼리_1](basic/수열과_구간_쿼리_1) ❗️
 - Difference Array
 ***
 [📁 조건에_맞게_수열_변환하기_1](basic/조건에_맞게_수열_변환하기_1)
@@ -261,7 +261,7 @@
 [📁 조건에_맞게_수열_변환하기_2](basic/조건에_맞게_수열_변환하기_2)
 - IntStream.map(java.util.function.IntUnaryOperator)
 ***
-[📁 _1로_만들기](basic/_1로_만들기)
+[📁 _1로_만들기](basic/_1로_만들기) ❗️
 - Recursive Function
 - Factorial
 - Fibonacci
@@ -290,5 +290,59 @@
 - String.charAt(int)
 - String.replace(char,char)
 - String.toUpperCase()
+***
+[📁 특정_문자열로_끝나는_가장_긴_부분_문자열_찾기](basic/특정_문자열로_끝나는_가장_긴_부분_문자열_찾기)
+- String.lastIndexOf(java.lang.String)
+- String.substring(int,int)
+- String.endsWith(java.lang.String)
+- Regular expression(Regex)
+- String.replaceAll(java.lang.String,java.lang.String)
+***
+[📁 문자열이_몇_번_등장하는지_세기](basic/문자열이_몇_번_등장하는지_세기)
+- String.indexOf(java.lang.String,int)
+- String.startsWith(java.lang.String)
+***
+[📁 ad_제거하기](basic/ad_제거하기) ❗️
+- ArrayList
+- String.contains(java.lang.CharSequence)
+- Arrays.stream(T[])
+- Stream.filter(java.util.function.Predicate)
+- Arrays.copyOf(char[],int)
+***
+[📁 공백으로_구분하기_1](basic/공백으로_구분하기_1)
+- String.split(java.lang.String)
+***
+[📁 공백으로_구분하기_2](basic/공백으로_구분하기_2)
+- String.split(java.lang.String)
+- String.isBlank()
+- Arrays.copyOf(T[],int)
+***
+[📁 x_사이의_개수](basic/x_사이의_개수)  
+String.split(java.lang.String,int)
+***
+[📁 문자열_잘라서_정렬하기](basic/문자열_잘라서_정렬하기)
+- ArrayList
+- String.isEmpty()
+- String.split(java.lang.String)
+- Arrays.sort(java.lang.Object[])
+- Arrays.stream(T[])
+- Stream.filter(java.util.function.Predicate)
+- Stream.sorted()
+***
+[📁 간단한_식_계산하기](basic/간단한_식_계산하기)
+- String.split(java.lang.String)
+- Integer.parseInt(java.lang.String)
+- Map.of()
+- Enum
+***
+[📁 문자열_바꿔서_찾기](basic/문자열_바꿔서_찾기)
+- StringBuilder 
+- String.toCharArray()
+- String.contains(java.lang.CharSequence)
+- String.replace(char,char)
+***
+[📁 rny_string](basic/rny_string)
+- String.replace(char,char)
+***
 
 </details>
