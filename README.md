@@ -252,5 +252,43 @@
 ***
 [📁 n_보다_커질_때까지_더하기](basic/n_보다_커질_때까지_더하기)
 ***
+[📁 수열과_구간_쿼리_1](basic/수열과_구간_쿼리_1)
+- Difference Array
+***
+[📁 조건에_맞게_수열_변환하기_1](basic/조건에_맞게_수열_변환하기_1)
+- IntStream.map(java.util.function.IntUnaryOperator)
+***
+[📁 조건에_맞게_수열_변환하기_2](basic/조건에_맞게_수열_변환하기_2)
+- IntStream.map(java.util.function.IntUnaryOperator)
+***
+[📁 _1로_만들기](basic/_1로_만들기)
+- Recursive Function
+- Factorial
+- Fibonacci
+- BinarySearch
+***
+[📁 길이에_따른_연산](basic/길이에_따른_연산)
+***
+[📁 원하는_문자열_찾기](basic/원하는_문자열_찾기)
+- String.toLowerCase()
+- String.contains(java.lang.CharSequence)
+***
+[📁 대문자로_바꾸기](basic/대문자로_바꾸기)
+- String.toUpperCase()
+***
+[📁 소문자로_바꾸기](basic/소문자로_바꾸기)
+- String.toLowerCase()
+***
+[📁 배열에서_문자열_대소문자_변환하기](basic/배열에서_문자열_대소문자_변환하기)
+- String.toUpperCase()
+***
+[📁 A_강조하기](basic/A_강조하기)
+- String.toLowerCase()
+- String.replace(char,char)
+***
+[📁 특정한_문자를_대문자로_바꾸기](basic/특정한_문자를_대문자로_바꾸기)
+- String.charAt(int)
+- String.replace(char,char)
+- String.toUpperCase()
 
 </details>
