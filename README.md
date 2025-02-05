@@ -344,5 +344,55 @@ String.split(java.lang.String,int)
 [📁 rny_string](basic/rny_string)
 - String.replace(char,char)
 ***
+[📁 세_개의_구분자](basic/세_개의_구분자)
+- String.split(java.lang.String)
+- ArrayList
+- String.isEmpty()
+- List.isEmpty()
+***
+[📁 배열의_원소만큼_추가하기](basic/배열의_원소만큼_추가하기)
+- Arrays.fill(int[],int,int,int)
+- IntStream.flatMap(java.util.function.IntFunction)
+- IntStream.generate(java.util.function.IntSupplier)
+- IntStream.limit(long)
+***
+[📁 빈_배열_추가_삭제하기](basic/빈_배열_추가_삭제하기)
+- ArrayList
+***
+[📁 배열_만들기_6](basic/배열_만들기_6)
+- Stack and Deque
+- ArrayDeque
+- Collection.isEmpty()
+- java/util/Collection.stream()
+- Stream.mapToInt(java.util.function.ToIntFunction)
+***
+[📁 무작위로_K개의_수_뽑기](basic/배열의_길이를_2의_거듭제곱으로_만들기)
+- LinkedHashSet
+***
+[📁 배열의_길이를_2의_거듭제곱으로_만들기](basic/배열의_길이를_2의_거듭제곱으로_만들기) ❗️
+- System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)
+***
+[📁 배열_비교하기](basic/배열_비교하기)
+- Arrays.stream(T[])
+- IntStream.sum()
+- Integer.compare(int,int)
+***
+[📁 문자열_묶기](basic/문자열_묶기) ❗️
+- HashMap
+- Map.getOrDefault(java.lang.Object,V)
+- Math.max(int,int)
+- Collectors.groupingBy(java.util.function.Function,java.util.stream.Collector)
+- Stream.collect(java.util.stream.Collector)
+- Collection.stream()
+- Stream.max(java.util.Comparator)
+- Optional.orElse(T)
+- Long.intValue()
+***
+[📁 배열의_길이에_따라_다른_연산하기](basic/배열의_길이에_따라_다른_연산하기)
+***
+[📁 뒤에서_5등까지](basic/뒤에서_5등까지)
+- Arrays.sort(int[])
+- Arrays.copyOfRange(int[],int,int)
+***
 
 </details>
