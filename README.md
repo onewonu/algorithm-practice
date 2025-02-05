@@ -318,7 +318,7 @@
 - Arrays.copyOf(T[],int)
 ***
 [📁 x_사이의_개수](basic/x_사이의_개수)  
-String.split(java.lang.String,int)
+- String.split(java.lang.String,int)
 ***
 [📁 문자열_잘라서_정렬하기](basic/문자열_잘라서_정렬하기)
 - ArrayList
