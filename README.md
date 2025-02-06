@@ -402,5 +402,15 @@
 - Stream.sorted()
 - IntStream.skip(long)
 ***
+[📁 전국_대회_선발_고사](basic/전국_대회_선발_고사)
+- ArrayList
+- List.sort(java.util.Comparator)
+- Comparator.comparingInt(java.util.function.ToIntFunction) 
+- PriorityQueue
+- Objects.requireNonNull(T)
+- TreeSet
+- Stream.sorted()
+- Collection.stream()
+***
 
 </details>
