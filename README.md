@@ -415,5 +415,37 @@
 [📁 정수_부분](basic/정수_부분)
 - Type Casting
 ***
+[📁 문자열_정수의_합](basic/문자열_정수의_합)
+- String.toCharArray()
+- String.chars()
+- IntStream.map(java.util.function.IntUnaryOperator)
+- IntStream.sum()
+- String.split(java.lang.String)
+- Integer.parseInt(java.lang.String)
+***
+[📁 _0_떼기](basic/_0_떼기)
+- Integer.parseInt(java.lang.String)
+- String.charAt(int)
+- String.substring(int)
+***
+[📁 두_수의_합](basic/두_수의_합) ❗️
+- StringBuilder
+- Math.max(int,int)
+- String.repeat(int)
+- String.charAt(int)
+- ASCII - '0'
+- StringBuilder.reverse()
+- BigInteger
+***
+[📁 문자열로_변환](basic/문자열로_변환)
+***
+[📁 배열의_원소_삭제하기](basic/배열의_원소_삭제하기)
+- HashSet
+- HashSet.contains(java.lang.Object)
+- Arrays.copyOf(int[],int)
+***
+[📁 부분_문자열인지_확인하기](basic/부분_문자열인지_확인하기)
+- String.contains(java.lang.CharSequence)
+***
 
 </details>
