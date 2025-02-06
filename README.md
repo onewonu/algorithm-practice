@@ -1,4 +1,4 @@
-# programmers
+# Programmers
 <details>
   <summary><strong>0️⃣ 코딩 기초 트레이닝</strong></summary>
 
@@ -504,5 +504,100 @@
 - Symmetric Matrix
 - Math.min(int,int)
 ***
+
+<details>
+  <summary><strong>📊 코딩 기초 트레이닝 Method Usage Statistics</strong></summary>
+
+| Method/Package                                                                | Count |
+|:------------------------------------------------------------------------------|------:|
+| String.charAt(int)                                                            |    11 |
+| String.substring(int,int)                                                     |     7 |
+| String.toCharArray()                                                          |     7 |
+| String.contains(java.lang.CharSequence)                                       |     7 |
+| Integer.parseInt(java.lang.String)                                            |     6 |
+| Math.max(int,int)                                                             |     6 |
+| String.split(java.lang.String)                                                |     6 |
+| System.arraycopy(java.lang.Object,int,java.lang.Object,int,int)               |     5 |
+| Arrays.copyOfRange(int[],int,int)                                             |     5 |
+| Scanner.next()                                                                |     4 |
+| Scanner.nextInt()                                                             |     4 |
+| String.repeat(int)                                                            |     4 |
+| String.substring(int)                                                         |     4 |
+| Stream.mapToInt(java.util.function.ToIntFunction)                             |     4 |
+| String.replace(char,char)                                                     |     4 |
+| IntStream.range(int,int)                                                      |     3 |
+| String.chars()                                                                |     3 |
+| IntStream.mapToObj(java.util.function.IntFunction)                            |     3 |
+| StringBuilder.reverse()                                                       |     3 |
+| String.startsWith(java.lang.String)                                           |     3 |
+| IntStream.map(java.util.function.IntUnaryOperator)                            |     3 |
+| String.toLowerCase()                                                          |     3 |
+| String.toUpperCase()                                                          |     3 |
+| Arrays.stream(T[])                                                            |     3 |
+| Stream.sorted()                                                               |     3 |
+| Collection.stream()                                                           |     3 |
+| IntStream.forEach(java.util.function.IntConsumer)                             |     2 |
+| List.isEmpty()                                                                |     2 |
+| Map.getOrDefault(java.lang.Object,V)                                          |     2 |
+| String.endsWith(java.lang.String)                                             |     2 |
+| HashSet.contains(java.lang.Object)                                            |     2 |
+| IntStream.rangeClosed(int,int)                                                |     2 |
+| Stream.filter(java.util.function.Predicate)                                   |     2 |
+| String.isEmpty()                                                              |     2 |
+| IntStream.sum()                                                               |     2 |
+| Scanner.nextLine()                                                            |     1 |
+| String.charAt(String)                                                         |     1 |
+| String.join(java.lang.CharSequence,java.lang.Iterable)                        |     1 |
+| String.valueOf()                                                              |     1 |
+| Integer.parseInt(java.lang.CharSequence,int,int,int)                          |     1 |
+| Integer.toBinaryString(int)                                                   |     1 |
+| Map.keySet()                                                                  |     1 |
+| Map.containsValue(java.lang.Object)                                           |     1 |
+| Math.pow(double,double)                                                       |     1 |
+| Math.abs(int)                                                                 |     1 |
+| StringBuilder.substring(int,int)                                              |     1 |
+| StringBuilder.replace(int,int,java.lang.String)                               |     1 |
+| Arrays.html                                                                   |     1 |
+| java.lang                                                                     |     1 |
+| Character.isUpperCase(char)                                                   |     1 |
+| Character.isLowerCase(char)                                                   |     1 |
+| Arrays.copyOfRange(T[],int,int)                                               |     1 |
+| IntStream.filter(java.util.function.IntPredicate)                             |     1 |
+| String.lastIndexOf(java.lang.String)                                          |     1 |
+| String.replaceAll(java.lang.String,java.lang.String)                          |     1 |
+| String.indexOf(java.lang.String,int)                                          |     1 |
+| Arrays.copyOf(char[],int)                                                     |     1 |
+| String.isBlank()                                                              |     1 |
+| Arrays.copyOf(T[],int)                                                        |     1 |
+| String.split(java.lang.String,int)                                            |     1 |
+| Arrays.sort(java.lang.Object[])                                               |     1 |
+| Map.of()                                                                      |     1 |
+| Arrays.fill(int[],int,int,int)                                                |     1 |
+| IntStream.flatMap(java.util.function.IntFunction)                             |     1 |
+| IntStream.generate(java.util.function.IntSupplier)                            |     1 |
+| IntStream.limit(long)                                                         |     1 |
+| Collection.isEmpty()                                                          |     1 |
+| Integer.compare(int,int)                                                      |     1 |
+| Collectors.groupingBy(java.util.function.Function,java.util.stream.Collector) |     1 |
+| Stream.collect(java.util.stream.Collector)                                    |     1 |
+| Stream.max(java.util.Comparator)                                              |     1 |
+| Optional.orElse(T)                                                            |     1 |
+| Long.intValue()                                                               |     1 |
+| Arrays.sort(int[])                                                            |     1 |
+| AbstractCollection.isEmpty()                                                  |     1 |
+| IntStream.skip(long)                                                          |     1 |
+| List.sort(java.util.Comparator)                                               |     1 |
+| Comparator.comparingInt(java.util.function.ToIntFunction)                     |     1 |
+| Objects.requireNonNull(T)                                                     |     1 |
+| Arrays.copyOf(int[],int)                                                      |     1 |
+| Arrays.binarySearch(int[],int)                                                |     1 |
+| Math.html                                                                     |     1 |
+| String.equals(java.lang.Object)                                               |     1 |
+| String.valueOf(char)                                                          |     1 |
+| Stream.reduce(T,java.util.function.BinaryOperator)                            |     1 |
+| String.concat(java.lang.String)                                               |     1 |
+| Math.min(int,int)                                                             |     1 |
+
+</details>
 
 </details>
