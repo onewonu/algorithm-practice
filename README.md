@@ -443,9 +443,54 @@
 - HashSet
 - HashSet.contains(java.lang.Object)
 - Arrays.copyOf(int[],int)
+- Binary Search
+- Arrays.binarySearch(int[],int)
 ***
 [📁 부분_문자열인지_확인하기](basic/부분_문자열인지_확인하기)
 - String.contains(java.lang.CharSequence)
+***
+[📁 부분_문자열](basic/부분_문자열)
+- String.contains(java.lang.CharSequence)
+***
+[📁 꼬리_문자열](basic/꼬리_문자열)
+- StringBuilder
+- String.contains(java.lang.CharSequence)
+***
+[📁 정수_찾기](basic/정수_찾기)
+***
+[📁 주사위_게임_1](basic/주사위_게임_1)
+- Math.html#abs(int)
+***
+[📁 날짜_비교하기](basic/날짜_비교하기)
+- LocalDate
+***
+[📁 커피_심부름](basic/커피_심부름)
+- String.contains(java.lang.CharSequence)
+- String.equals(java.lang.Object)
+- HashMap
+- String.startsWith(java.lang.String)
+***
+[📁 그림_확대](basic/그림_확대) ❗️
+- StringBuilder
+- String.toCharArray()
+- String.valueOf(char)
+- String.repeat(int)
+- Row-Major Indexing
+- StringJoiner
+- ArrayList
+- IntStream.range(int,int)
+- IntStream.mapToObj(java.util.function.IntFunction)
+- String.chars()
+- Stream.reduce(T,java.util.function.BinaryOperator)
+- String.concat(java.lang.String)
+***
+[📁 조건에_맞게_수열_변환하기_3](basic/조건에_맞게_수열_변환하기_3)
+***
+[📁 l_로_만들기](basic/l_로_만들기)
+- String.toCharArray()
+***
+[📁 특별한_이차원_배열_1](basic/특별한_이차원_배열_1)
+- Diagonal element
 ***
 
 </details>
