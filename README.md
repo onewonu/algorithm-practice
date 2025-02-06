@@ -412,5 +412,8 @@
 - Stream.sorted()
 - Collection.stream()
 ***
+[📁 정수_부분](basic/정수_부분)
+- Type Casting
+***
 
 </details>
