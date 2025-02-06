@@ -510,6 +510,8 @@
 <details>
   <summary><strong>📊 코딩 기초 트레이닝 Method Usage Statistics</strong></summary>
 
+<br/>
+
 | Method/Package                                                                | Count |
 |:------------------------------------------------------------------------------|------:|
 | String.charAt(int)                                                            |    11 |
