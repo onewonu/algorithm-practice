@@ -2,6 +2,8 @@
 <details>
   <summary><strong>0️⃣ 코딩 기초 트레이닝</strong></summary>
 
+<br/>
+
 [📁 문자열_출력하기](basic/문자열_출력하기)
 - Scanner.next()
 - Scanner.nextLine()  
