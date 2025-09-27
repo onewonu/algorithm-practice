@@ -7,11 +7,12 @@ on:
 jobs:
   move-files:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
-        fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Move LeetCode files to directory
@@ -25,16 +26,17 @@ jobs:
         
         # 다양한 확장자의 파일들 확인 및 이동
         for file in *.py *.java *.js *.cpp *.c *.md; do
-          if [[ -f "$file" && ! -d "leetcode/$file" ]]; then
-            # README.md는 특별 처리
-            if [[ "$file" == "README.md" ]]; then
+          if [[ -f "$file" && ! -f "leetcode/$file" ]]; then
+            # README.md는 특별 처리 (이미 LeetCode-README.md가 있으면 스킵)
+            if [[ "$file" == "README.md" && ! -f "leetcode/LeetCode-README.md" ]]; then
               mv "$file" "leetcode/LeetCode-README.md"
               echo "Moved README.md to leetcode/LeetCode-README.md"
-            else
+              moved=true
+            elif [[ "$file" != "README.md" ]]; then
               mv "$file" "leetcode/"
               echo "Moved $file to leetcode directory"
+              moved=true
             fi
-            moved=true
           fi
         done
         
