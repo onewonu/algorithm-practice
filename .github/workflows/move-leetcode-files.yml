@@ -1,0 +1,50 @@
+name: Move LeetCode Files
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  move-files:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Move LeetCode files to directory
+      id: move-files
+      run: |
+        # leetcode 디렉토리 생성
+        mkdir -p leetcode
+        
+        # 루트의 코딩 테스트 파일들을 leetcode로 이동
+        moved=false
+        
+        # 다양한 확장자의 파일들 확인 및 이동
+        for file in *.py *.java *.js *.cpp *.c *.md; do
+          if [[ -f "$file" && ! -d "leetcode/$file" ]]; then
+            # README.md는 특별 처리
+            if [[ "$file" == "README.md" ]]; then
+              mv "$file" "leetcode/LeetCode-README.md"
+              echo "Moved README.md to leetcode/LeetCode-README.md"
+            else
+              mv "$file" "leetcode/"
+              echo "Moved $file to leetcode directory"
+            fi
+            moved=true
+          fi
+        done
+        
+        echo "moved=$moved" >> $GITHUB_OUTPUT
+        
+    - name: Commit and push changes
+      if: steps.move-files.outputs.moved == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "🚀 Auto-moved LeetCode files to leetcode directory"
+        git push
