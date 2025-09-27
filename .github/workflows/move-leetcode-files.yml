@@ -15,32 +15,81 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Move LeetCode files to directory
+    - name: Move LeetCode problem directories
       id: move-files
       run: |
         # leetcode 디렉토리 생성
         mkdir -p leetcode
         
-        # 루트의 코딩 테스트 파일들을 leetcode로 이동
         moved=false
         
-        # 다양한 확장자의 파일들 확인 및 이동
-        for file in *.py *.java *.js *.cpp *.c *.md; do
-          if [[ -f "$file" && ! -f "leetcode/$file" ]]; then
-            # README.md는 특별 처리 (이미 LeetCode-README.md가 있으면 스킵)
-            if [[ "$file" == "README.md" && ! -f "leetcode/LeetCode-README.md" ]]; then
-              mv "$file" "leetcode/LeetCode-README.md"
-              echo "Moved README.md to leetcode/LeetCode-README.md"
+        # 기존 프로젝트 디렉터리 목록 (이동하지 않을 디렉터리들)
+        EXCLUDE_DIRS=("leetcode" "basic" ".git" ".github" "node_modules" "target" "build" "src" "docs" "test" "tests")
+        
+        # 루트의 디렉터리들 확인
+        for dir in */; do
+          dirname=$(basename "$dir")
+          
+          # 제외 목록에 있는지 확인
+          exclude=false
+          for exclude_dir in "${EXCLUDE_DIRS[@]}"; do
+            if [[ "$dirname" == "$exclude_dir" ]]; then
+              exclude=true
+              break
+            fi
+          done
+          
+          # 제외 목록에 없고, LeetCode 패턴과 일치하는 경우만 이동
+          if [[ "$exclude" == false ]]; then
+            # LeetCode 디렉터리 패턴 확인
+            # 1. 숫자로 시작하는 디렉터리 (예: 1-two-sum, 2-add-two-numbers)
+            # 2. 또는 leetcode 관련 키워드가 포함된 디렉터리
+            if [[ "$dirname" =~ ^[0-9]+- ]] || [[ "$dirname" =~ ^[0-9]{4}- ]] || [[ "$dirname" =~ leetcode|problem ]]; then
+              echo "Moving LeetCode problem directory: $dir → leetcode/"
+              mv "$dir" "leetcode/"
               moved=true
-            elif [[ "$file" != "README.md" ]]; then
+            else
+              echo "Skipping directory (not LeetCode pattern): $dirname"
+            fi
+          else
+            echo "Skipping excluded directory: $dirname"
+          fi
+        done
+        
+        # 루트에 개별 파일이 있는 경우도 처리 (LeetCode 관련만)
+        for file in *.py *.java *.js *.cpp *.c; do
+          if [[ -f "$file" ]]; then
+            # 파일명이 LeetCode 패턴인지 확인 (숫자로 시작하거나 leetcode 키워드 포함)
+            if [[ "$file" =~ ^[0-9]+- ]] || [[ "$file" =~ leetcode|problem ]]; then
+              echo "Moving LeetCode file: $file → leetcode/"
               mv "$file" "leetcode/"
-              echo "Moved $file to leetcode directory"
               moved=true
+            else
+              echo "Skipping file (not LeetCode pattern): $file"
             fi
           fi
         done
         
+        # README.md는 LeetHub이 생성한 것만 이동 (최근에 수정된 것으로 판단)
+        if [[ -f "README.md" ]]; then
+          # 파일이 최근 1분 내에 수정된 경우만 LeetHub이 생성한 것으로 간주
+          if [[ $(find "README.md" -mmin -1) ]]; then
+            if [[ ! -f "leetcode/LeetCode-README.md" ]]; then
+              echo "Moving LeetHub README.md → leetcode/LeetCode-README.md"
+              mv "README.md" "leetcode/LeetCode-README.md"
+              moved=true
+            fi
+          fi
+        fi
+        
         echo "moved=$moved" >> $GITHUB_OUTPUT
+        
+    - name: Show final structure
+      run: |
+        echo "=== Root directory (should keep basic/ and other project folders) ==="
+        ls -la
+        echo "=== LeetCode directory contents ==="
+        ls -la leetcode/ 2>/dev/null || echo "leetcode directory is empty"
         
     - name: Commit and push changes
       if: steps.move-files.outputs.moved == 'true'
@@ -48,5 +97,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "🚀 Auto-moved LeetCode files to leetcode directory"
+        git commit -m "🚀 Auto-moved LeetCode problem directories to leetcode/"
         git push
