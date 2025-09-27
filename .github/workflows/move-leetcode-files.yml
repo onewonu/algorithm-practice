@@ -24,7 +24,7 @@ jobs:
         moved=false
         
         # 기존 프로젝트 디렉터리 목록 (이동하지 않을 디렉터리들)
-        EXCLUDE_DIRS=("leetcode" "basic" "README.md" ".git" ".github" "node_modules" "target" "build" "src" "docs" "test" "tests")
+        EXCLUDE_DIRS=("leetcode" "basic" ".git" ".github" "node_modules" "target" "build" "src" "docs" "test" "tests")
         
         # 루트의 디렉터리들 확인
         for dir in */; do
@@ -69,18 +69,6 @@ jobs:
             fi
           fi
         done
-        
-        # README.md는 LeetHub이 생성한 것만 이동 (최근에 수정된 것으로 판단)
-        if [[ -f "README.md" ]]; then
-          # 파일이 최근 1분 내에 수정된 경우만 LeetHub이 생성한 것으로 간주
-          if [[ $(find "README.md" -mmin -1) ]]; then
-            if [[ ! -f "leetcode/LeetCode-README.md" ]]; then
-              echo "Moving LeetHub README.md → leetcode/LeetCode-README.md"
-              mv "README.md" "leetcode/LeetCode-README.md"
-              moved=true
-            fi
-          fi
-        fi
         
         echo "moved=$moved" >> $GITHUB_OUTPUT
         
