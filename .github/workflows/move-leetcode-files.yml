@@ -2,7 +2,7 @@ name: Move LeetCode Files
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
 
 jobs:
   move-files:
@@ -42,9 +42,8 @@ jobs:
           # 제외 목록에 없고, LeetCode 패턴과 일치하는 경우만 이동
           if [[ "$exclude" == false ]]; then
             # LeetCode 디렉터리 패턴 확인
-            # 1. 숫자로 시작하는 디렉터리 (예: 1-two-sum, 2-add-two-numbers)
-            # 2. 또는 leetcode 관련 키워드가 포함된 디렉터리
-            if [[ "$dirname" =~ ^[0-9]+- ]] || [[ "$dirname" =~ ^[0-9]{4}- ]] || [[ "$dirname" =~ leetcode|problem ]]; then
+            # 숫자로 시작하는 디렉터리만
+            if [[ "$dirname" =~ ^[0-9]+- ]] || [[ "$dirname" =~ ^[0-9]{4}- ]]; then
               echo "Moving LeetCode problem directory: $dir → leetcode/"
               mv "$dir" "leetcode/"
               moved=true
@@ -53,20 +52,6 @@ jobs:
             fi
           else
             echo "Skipping excluded directory: $dirname"
-          fi
-        done
-        
-        # 루트에 개별 파일이 있는 경우도 처리 (LeetCode 관련만)
-        for file in *.py *.java *.js *.cpp *.c; do
-          if [[ -f "$file" ]]; then
-            # 파일명이 LeetCode 패턴인지 확인 (숫자로 시작하거나 leetcode 키워드 포함)
-            if [[ "$file" =~ ^[0-9]+- ]] || [[ "$file" =~ leetcode|problem ]]; then
-              echo "Moving LeetCode file: $file → leetcode/"
-              mv "$file" "leetcode/"
-              moved=true
-            else
-              echo "Skipping file (not LeetCode pattern): $file"
-            fi
           fi
         done
         
@@ -85,5 +70,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "🚀 Auto-moved LeetCode problem directories to leetcode/"
+        git commit -m "🚀 Auto-moved LeetCode problem directories"
         git push
