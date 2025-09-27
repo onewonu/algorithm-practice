@@ -44,6 +44,11 @@ jobs:
             # LeetCode 디렉터리 패턴 확인
             # 숫자로 시작하는 디렉터리만
             if [[ "$dirname" =~ ^[0-9]+- ]] || [[ "$dirname" =~ ^[0-9]{4}- ]]; then
+              # 이미 존재하는 경우 덮어쓰기
+              if [[ -d "leetcode/$dirname" ]]; then
+                echo "Overwriting existing directory: leetcode/$dirname"
+                rm -rf "leetcode/$dirname"
+              fi
               echo "Moving LeetCode problem directory: $dir → leetcode/"
               mv "$dir" "leetcode/"
               moved=true
