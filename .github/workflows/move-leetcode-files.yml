@@ -24,7 +24,7 @@ jobs:
         moved=false
         
         # 기존 프로젝트 디렉터리 목록 (이동하지 않을 디렉터리들)
-        EXCLUDE_DIRS=("leetcode" "basic" ".git" ".github" "node_modules" "target" "build" "src" "docs" "test" "tests")
+        EXCLUDE_DIRS=("leetcode" "basic" "README.md" ".git" ".github" "node_modules" "target" "build" "src" "docs" "test" "tests")
         
         # 루트의 디렉터리들 확인
         for dir in */; do
