@@ -41,8 +41,7 @@ jobs:
           
           # 제외 목록에 없고, LeetCode 패턴과 일치하는 경우만 이동
           if [[ "$exclude" == false ]]; then
-            # LeetCode 디렉터리 패턴 확인
-            # 숫자로 시작하는 디렉터리만
+            # LeetCode 디렉터리 패턴 확인(숫자로 시작하는 디렉터리만)
             if [[ "$dirname" =~ ^[0-9]+- ]] || [[ "$dirname" =~ ^[0-9]{4}- ]]; then
               # 이미 존재하는 경우 덮어쓰기
               if [[ -d "leetcode/$dirname" ]]; then
