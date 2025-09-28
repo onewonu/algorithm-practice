@@ -11,68 +11,30 @@ jobs:
       contents: write
     
     steps:
-    - uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Move LeetCode problem directories
-      id: move-files
-      run: |
-        # leetcode 디렉토리 생성
-        mkdir -p leetcode
-        
-        moved=false
-        
-        # 기존 프로젝트 디렉터리 목록 (이동하지 않을 디렉터리들)
-        EXCLUDE_DIRS=("leetcode" "basic" ".git" ".github" "node_modules" "target" "build" "src" "docs" "test" "tests")
-        
-        # 루트의 디렉터리들 확인
-        for dir in */; do
-          dirname=$(basename "$dir")
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move LeetCode files
+        run: |
+          # LeetCode 패턴 확인 및 이동
+          moved=false
+          mkdir -p leetcode
           
-          # 제외 목록에 있는지 확인
-          exclude=false
-          for exclude_dir in "${EXCLUDE_DIRS[@]}"; do
-            if [[ "$dirname" == "$exclude_dir" ]]; then
-              exclude=true
-              break
+          # 숫자로 시작하는 디렉토리와 파일 이동
+          for item in *; do
+            if [[ "$item" =~ ^[0-9]+- ]]; then
+              echo "Moving: $item → leetcode/"
+              mv "$item" "leetcode/"
+              moved=true
             fi
           done
           
-          # 제외 목록에 없고, LeetCode 패턴과 일치하는 경우만 이동
-          if [[ "$exclude" == false ]]; then
-            # LeetCode 디렉터리 패턴 확인(숫자로 시작하는 디렉터리만)
-            if [[ "$dirname" =~ ^[0-9]+- ]] || [[ "$dirname" =~ ^[0-9]{4}- ]]; then
-              # 이미 존재하는 경우 덮어쓰기
-              if [[ -d "leetcode/$dirname" ]]; then
-                echo "Overwriting existing directory: leetcode/$dirname"
-                rm -rf "leetcode/$dirname"
-              fi
-              echo "Moving LeetCode problem directory: $dir → leetcode/"
-              mv "$dir" "leetcode/"
-              moved=true
-            else
-              echo "Skipping directory (not LeetCode pattern): $dirname"
-            fi
-          else
-            echo "Skipping excluded directory: $dirname"
+          # 변경사항이 있으면 커밋
+          if [[ "$moved" == true ]]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add .
+            git commit -m "🚀 Auto-moved LeetCode files"
+            git push
           fi
-        done
-        
-        echo "moved=$moved" >> $GITHUB_OUTPUT
-        
-    - name: Show final structure
-      run: |
-        echo "=== Root directory (should keep basic/ and other project folders) ==="
-        ls -la
-        echo "=== LeetCode directory contents ==="
-        ls -la leetcode/ 2>/dev/null || echo "leetcode directory is empty"
-        
-    - name: Commit and push changes
-      if: steps.move-files.outputs.moved == 'true'
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "🚀 Auto-moved LeetCode problem directories"
-        git push
