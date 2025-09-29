@@ -2,22 +2,14 @@ class Solution {
     public int pivotInteger(int n) {
         if (n == 1) return 1;
 
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = i + 1;
-        }
-
-        int total = 0;
-        for (int num : arr) {
-            total += num;
-        }
-
+        int total = n * (n + 1) / 2;
         int left = 0;
-        for (int num : arr) {
-            left += num;
-            int right = total - left + num;
 
-            if (left == right) return num;
+        for (int i = 1; i <= n; i++) {
+            left += i;
+            int right = total - left + i;
+
+            if (left == right) return i;
         }
 
         return -1;
