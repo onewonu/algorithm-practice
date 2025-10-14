@@ -1,26 +1,26 @@
 class Solution {
     public int maxScore(String s) {
         char[] chars = s.toCharArray();
-        int maxScore = 0;
+        int totalOnes = 0;
         
-        for (int i = 1; i < chars.length; i++) {
-            int zero = 0;
-            int one = 0;
-            
-            for (int j = 0; j < i; j++) {
-                if (chars[j] == '0') {
-                    zero++;
-                }
+        for (char c : chars) {
+            if (c == '1') {
+                totalOnes++;
+            }
+        }
+        
+        int maxScore = 0;
+        int leftZeros = 0;
+        int leftOnes = 0;
+        
+        for (int i = 0; i < chars.length - 1; i++) {
+            if (chars[i] == '0') {
+                leftZeros++;
+            } else {
+                leftOnes++;
             }
             
-            for (int j = i; j < chars.length; j++) {
-                if (chars[j] == '1') {
-                    one++;
-                }
-            }
-            
-            int currentScore = zero + one;
-            
+            int currentScore = leftZeros + (totalOnes - leftOnes);
             maxScore = Math.max(maxScore, currentScore);
         }
         
