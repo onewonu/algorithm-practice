@@ -1,24 +1,13 @@
 class Solution {
     public int minStartValue(int[] nums) {
-        int startValue = 1;
+        int prefixSum = 0;
+        int minPrefixSum = 0;
 
-        while (true) {
-            int sum = startValue;
-            boolean isValid = true;
-
-            for (int num : nums) {
-                sum += num;
-                if (sum < 1) {
-                    isValid = false;
-                    break;
-                }
-            }
-
-            if (isValid) {
-                return startValue;
-            }
-
-            startValue++;
+        for (int num : nums) {
+            prefixSum += num;
+            minPrefixSum = Math.min(minPrefixSum, prefixSum);
         }
+
+        return 1 - minPrefixSum;
     }
 }
