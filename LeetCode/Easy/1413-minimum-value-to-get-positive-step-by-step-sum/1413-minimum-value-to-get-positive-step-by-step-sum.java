@@ -1,24 +1,24 @@
 class Solution {
     public int minStartValue(int[] nums) {
-        int start = 1;
+        int startValue = 1;
 
-        while(true) {
+        while (true) {
+            int sum = startValue;
             boolean isValid = true;
-            int prefix = start;
 
             for (int num : nums) {
-                prefix += num;
-                if (prefix < 1) {
+                sum += num;
+                if (sum < 1) {
                     isValid = false;
                     break;
                 }
             }
 
             if (isValid) {
-                return start;
+                return startValue;
             }
 
-            start++;
+            startValue++;
         }
     }
 }
