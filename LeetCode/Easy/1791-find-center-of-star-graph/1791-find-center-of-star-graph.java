@@ -8,7 +8,7 @@ class Solution {
                 countMap.put(num, newCount);
 
                 // 중심 노드가 모든 간선에 연결 됨, 중심 노드의 차수 = n - 1 = edges.length
-                if (newCount == edge.length) {
+                if (newCount == edges.length) {
                     return num;
                 }
             }
