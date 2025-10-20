@@ -4,7 +4,13 @@ class Solution {
 
         for (int[] edge : edges) {
             for (int num : edge) {
-                countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+                int newCount = countMap.getOrDefault(num, 0) + 1;
+                countMap.put(num, newCount);
+
+                // 중심 노드가 모든 간선에 연결 됨, 중심 노드의 차수 = n - 1 = edges.length
+                if (newCount == edge.length) {
+                    return num;
+                }
             }
         }
 
